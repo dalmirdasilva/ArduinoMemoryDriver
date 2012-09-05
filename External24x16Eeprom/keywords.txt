@@ -1,0 +1,19 @@
+################################################
+# Syntax Coloring Map For External24x16Eeprom
+################################################
+
+################################################
+# Datatypes (KEYWORD1)
+################################################
+
+External24x16Eeprom	KEYWORD1
+
+################################################
+# Methods and Functions (KEYWORD2)
+################################################
+
+write	KEYWORD2
+writeBytes	KEYWORD2
+read	KEYWORD2
+readBytes	KEYWORD2
+setBytes	KEYWORD2

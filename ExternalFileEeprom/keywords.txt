@@ -1,0 +1,19 @@
+################################################
+# Syntax Coloring Map For ExternalFileEeprom
+################################################
+
+################################################
+# Datatypes (KEYWORD1)
+################################################
+
+ExternalFileEeprom	KEYWORD1
+
+################################################
+# Methods and Functions (KEYWORD2)
+################################################
+
+write	KEYWORD2
+writeBytes	KEYWORD2
+read	KEYWORD2
+readBytes	KEYWORD2
+setBytes	KEYWORD2
