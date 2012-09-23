@@ -2,6 +2,10 @@
 <configurationDescriptor version="80">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df name="memory" root=".">
+      <df name="doc">
+        <df name="html">
+        </df>
+      </df>
       <df name="External24cl256Eeprom">
         <in>External24cl256Eeprom.cpp</in>
         <in>External24cl256Eeprom.h</in>
