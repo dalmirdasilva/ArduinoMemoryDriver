@@ -11,6 +11,8 @@
 #ifndef __ARDUINO_EXTERNAL_FILE_EEPROM_CPP__
 #define __ARDUINO_EXTERNAL_FILE_EEPROM_CPP__ 1
 
+#if USE_FILE_LIBRARIES
+
 #include "ExternalFileEeprom.h"
 #include <stddef.h>
 #include <stdlib.h>
@@ -33,5 +35,7 @@ void ExternalFileEeprom::readBlock(unsigned int address, unsigned char* buffer, 
     fseek(fp, address, 0);
     fread(buffer, sizeof(unsigned char), len, fp);
 }
+
+#endif /* USE_FILE_LIBRARIES */
 
 #endif /* __ARDUINO_EXTERNAL_FILE_EEPROM_CPP__ */

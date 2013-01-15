@@ -11,6 +11,8 @@
 #ifndef __ARDUINO_EXTERNAL_FILE_EEPROM_H__
 #define __ARDUINO_EXTERNAL_FILE_EEPROM_H__ 1
 
+#if USE_FILE_LIBRARIES
+
 #include <ExternalEeprom.h>
 
 class ExternalFileEeprom : public ExternalEeprom {
@@ -47,5 +49,7 @@ protected:
      */
     virtual void readBlock(unsigned int address, unsigned char* buf, int len);
 };
+
+#endif /* USE_FILE_LIBRARIES */
 
 #endif /* __ARDUINO_EXTERNAL_FILE_EEPROM_H__ */

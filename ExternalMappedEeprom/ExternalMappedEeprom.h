@@ -11,7 +11,7 @@
 #ifndef __ARDUINO_EXTERNAL_MAPPED_EEPROM_H__
 #define __ARDUINO_EXTERNAL_MAPPED_EEPROM_H__ 1
 
-#include "ExternalEeprom.h"
+#include <ExternalEeprom.h>
 
 class ExternalMappedEeprom : public ExternalEeprom {
     
