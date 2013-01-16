@@ -15,7 +15,7 @@
 
 class External24cl256Eeprom : public ExternalEeprom {
 public:
-    
+
     /**
      * Public constructor.
      * 

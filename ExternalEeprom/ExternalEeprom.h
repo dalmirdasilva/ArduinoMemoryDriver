@@ -12,7 +12,7 @@
 #define __ARDUINO_EXTERNAL_EEPROM_H__ 1
 
 class ExternalEeprom {
-    
+
     /**
      * The size of the device.
      */

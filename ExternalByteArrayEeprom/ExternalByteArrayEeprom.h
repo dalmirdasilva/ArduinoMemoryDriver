@@ -14,7 +14,7 @@
 #include <ExternalEeprom.h>
 
 class ExternalByteArrayEeprom : public ExternalEeprom {
-    
+
     /**
      * The used buffer.
      */

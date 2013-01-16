@@ -15,14 +15,14 @@
 
 class External24x16Eeprom : public ExternalEeprom {
 public:
-    
+
     /**
      * Public constructor.
      * 
      * @param device
      */
     External24x16Eeprom(unsigned char device);
-    
+
 protected:
 
     /**

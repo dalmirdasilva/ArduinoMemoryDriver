@@ -15,11 +15,13 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-External24x16Eeprom::External24x16Eeprom(unsigned char device) : ExternalEeprom(0x20, 0x7ff, device) {
+External24x16Eeprom::External24x16Eeprom(unsigned char device) :
+        ExternalEeprom(0x20, 0x7ff, device) {
     Wire.begin();
 }
 
-void External24x16Eeprom::writeBlock(unsigned int address, unsigned char* buf, int len) {
+void External24x16Eeprom::writeBlock(unsigned int address, unsigned char* buf,
+        int len) {
     unsigned char block;
     block = (unsigned char) ((address >> 8) & 0x07);
     Wire.beginTransmission(getDevice() | block);
@@ -31,16 +33,18 @@ void External24x16Eeprom::writeBlock(unsigned int address, unsigned char* buf, i
     delay(5);
 }
 
-void External24x16Eeprom::readBlock(unsigned int address, unsigned char* buf, int len) {
+void External24x16Eeprom::readBlock(unsigned int address, unsigned char* buf,
+        int len) {
     unsigned char block, deviceAddr;
     block = (unsigned char) ((address >> 8) & 0x07);
     deviceAddr = (getDevice() | block);
     Wire.beginTransmission(deviceAddr);
     Wire.write((unsigned char) (address & 0xff));
     Wire.endTransmission();
-    Wire.requestFrom((int)deviceAddr, len);
+    Wire.requestFrom((int) deviceAddr, len);
     for (int i = 0; i < len; i++) {
-        while (!Wire.available());
+        while (!Wire.available())
+            ;
         buf[i] = Wire.read();
     }
 }

@@ -13,13 +13,16 @@
 
 #include "ExternalMappedEeprom.h"
 
-ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom* externalEeprom, unsigned int startAddress, unsigned int endAddress) 
-: ExternalEeprom(externalEeprom->getPageSize(), externalEeprom->getDeviceSize(), externalEeprom->getDevice()), externalEeprom(externalEeprom) {
+ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom* externalEeprom,
+        unsigned int startAddress, unsigned int endAddress) :
+                ExternalEeprom(externalEeprom->getPageSize(), externalEeprom->getDeviceSize(), externalEeprom->getDevice()),
+                externalEeprom(externalEeprom) {
     this->startAddress = startAddress;
     this->endAddress = endAddress;
 }
 
-void ExternalMappedEeprom::writeBlock(unsigned int address, unsigned char* buf, int len) {
+void ExternalMappedEeprom::writeBlock(unsigned int address, unsigned char* buf,
+        int len) {
     unsigned int mappedAddress = (address + startAddress);
     if (mappedAddress < endAddress) {
         unsigned int available = (endAddress - mappedAddress);
@@ -28,7 +31,8 @@ void ExternalMappedEeprom::writeBlock(unsigned int address, unsigned char* buf, 
     }
 }
 
-void ExternalMappedEeprom::readBlock(unsigned int address, unsigned char* buf, int len) {
+void ExternalMappedEeprom::readBlock(unsigned int address, unsigned char* buf,
+        int len) {
     unsigned int mappedAddress = (address + startAddress);
     if (mappedAddress < endAddress) {
         unsigned int available = (endAddress - mappedAddress);

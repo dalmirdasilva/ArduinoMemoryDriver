@@ -15,7 +15,9 @@
 
 #include "ExternalEeprom.h"
 
-ExternalEeprom::ExternalEeprom(int pageSize, unsigned int deviceSize, unsigned char device) : pageSize(pageSize), deviceSize(deviceSize) {
+ExternalEeprom::ExternalEeprom(int pageSize, unsigned int deviceSize,
+        unsigned char device) :
+        pageSize(pageSize), deviceSize(deviceSize) {
     this->device = 0x50 | (device & 0x07);
 }
 
@@ -23,7 +25,8 @@ void ExternalEeprom::write(unsigned int address, unsigned char b) {
     writeBlock(address, &b, 1);
 }
 
-void ExternalEeprom::writeBytes(unsigned int address, unsigned char* buf, int len) {
+void ExternalEeprom::writeBytes(unsigned int address, unsigned char* buf,
+        int len) {
     unsigned int eop, room;
     int chunkSize;
     room = (deviceSize - address);
@@ -56,7 +59,8 @@ int ExternalEeprom::read(unsigned int address) {
     return (int) b;
 }
 
-int ExternalEeprom::readBytes(unsigned int address, unsigned char* buf, int len) {
+int ExternalEeprom::readBytes(unsigned int address, unsigned char* buf,
+        int len) {
     int cnt, chunkSize = pageSize;
     unsigned int available;
     if (address >= deviceSize) {
@@ -112,10 +116,12 @@ unsigned int ExternalEeprom::endOfPage(unsigned int address) {
     return (eopAddr - address);
 }
 
-void ExternalEeprom::writeBlock(unsigned int address, unsigned char* buf, int len) {
+void ExternalEeprom::writeBlock(unsigned int address, unsigned char* buf,
+        int len) {
 }
 
-void ExternalEeprom::readBlock(unsigned int address, unsigned char* buf, int len) {
+void ExternalEeprom::readBlock(unsigned int address, unsigned char* buf,
+        int len) {
 }
 
 #endif /* __ARDUINO_EXTERNAL_EEPROM_CPP__ */

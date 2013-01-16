@@ -8,7 +8,6 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include test/subdir.mk
 -include ExternalMappedEeprom/subdir.mk
 -include ExternalFileEeprom/subdir.mk
 -include ExternalEeprom/subdir.mk
@@ -52,38 +51,38 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-libmemory.lss \
+libArduinoMemory.lss \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: libmemory.a secondary-outputs
+all: libArduinoMemory.a secondary-outputs
 
 # Tool invocations
-libmemory.a: $(OBJS)
+libArduinoMemory.a: $(OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR Archiver'
-	avr-ar -r  "libmemory.a" $(OBJS) $(LIBS)
+	avr-ar -r  "libArduinoMemory.a" $(OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-libmemory.lss: libmemory.a
+libArduinoMemory.lss: libArduinoMemory.a
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S libmemory.a  >"libmemory.lss"
+	-avr-objdump -h -S libArduinoMemory.a  >"libArduinoMemory.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: libmemory.a
+sizedummy: libArduinoMemory.a
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega328p libmemory.a
+	-avr-size --format=avr --mcu=atmega328p libArduinoMemory.a
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(LSS)$(S_DEPS)$(CXX_DEPS)$(S_UPPER_DEPS)$(C++_DEPS)$(ASM_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(C_UPPER_DEPS)$(SIZEDUMMY) libmemory.a
+	-$(RM) $(OBJS)$(C_DEPS)$(LSS)$(S_DEPS)$(CXX_DEPS)$(S_UPPER_DEPS)$(C++_DEPS)$(ASM_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(C_UPPER_DEPS)$(SIZEDUMMY) libArduinoMemory.a
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(SIZEDUMMY)
