@@ -38,7 +38,7 @@ void External24x16Eeprom::readBlock(unsigned int address, unsigned char* buf, in
     Wire.beginTransmission(deviceAddr);
     Wire.write((unsigned char) (address & 0xff));
     Wire.endTransmission();
-    Wire.requestFrom(deviceAddr, len);
+    Wire.requestFrom((int)deviceAddr, len);
     for (int i = 0; i < len; i++) {
         while (!Wire.available());
         buf[i] = Wire.read();
