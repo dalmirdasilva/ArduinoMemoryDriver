@@ -16,8 +16,9 @@
 #include "ExternalEeprom.h"
 
 ExternalEeprom::ExternalEeprom(int pageSize, unsigned int deviceSize,
-        unsigned char device) :
-        pageSize(pageSize), deviceSize(deviceSize) {
+        unsigned char device) {
+    this->pageSize = pageSize;
+    deviceSize = deviceSize;
     this->device = 0x50 | (device & 0x07);
 }
 
@@ -33,9 +34,9 @@ void ExternalEeprom::writeBytes(unsigned int address, unsigned char* buf,
     if (room == 0) {
         return;
     }
-    len = (room < len) ? room : len;
+    len = (room < (unsigned char) len) ? room : len;
     eop = endOfPage(address);
-    chunkSize = min(eop, len);
+    chunkSize = min(eop, (unsigned char) len);
     if (chunkSize > 0) {
         writeBlock(address, buf, chunkSize);
         address += chunkSize;
@@ -67,7 +68,7 @@ int ExternalEeprom::readBytes(unsigned int address, unsigned char* buf,
         return -1;
     }
     available = (deviceSize - address);
-    if (available < len) {
+    if (available < (unsigned char) len) {
         len = (int) available;
     }
     cnt = len;
@@ -89,7 +90,7 @@ int ExternalEeprom::setBytes(unsigned int address, unsigned char b, int len) {
         return -1;
     }
     room = (deviceSize - address);
-    if (room < len) {
+    if (room < (unsigned char) len) {
         len = (int) room;
     }
     for (int i = 0; i < pageSize; i++) {
