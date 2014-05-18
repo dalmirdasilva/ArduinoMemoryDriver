@@ -51,38 +51,38 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-libArduinoMemory.lss \
+libArduinoMemoryDriver.lss \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: libArduinoMemory.a secondary-outputs
+all: libArduinoMemoryDriver.a secondary-outputs
 
 # Tool invocations
-libArduinoMemory.a: $(OBJS)
+libArduinoMemoryDriver.a: $(OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR Archiver'
-	avr-ar -r  "libArduinoMemory.a" $(OBJS) $(LIBS)
+	avr-ar -r  "libArduinoMemoryDriver.a" $(OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-libArduinoMemory.lss: libArduinoMemory.a
+libArduinoMemoryDriver.lss: libArduinoMemoryDriver.a
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S libArduinoMemory.a  >"libArduinoMemory.lss"
+	-avr-objdump -h -S libArduinoMemoryDriver.a  >"libArduinoMemoryDriver.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: libArduinoMemory.a
+sizedummy: libArduinoMemoryDriver.a
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega328p libArduinoMemory.a
+	-avr-size --format=avr --mcu=atmega328p libArduinoMemoryDriver.a
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C_DEPS)$(LSS)$(S_DEPS)$(CXX_DEPS)$(S_UPPER_DEPS)$(C++_DEPS)$(ASM_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(C_UPPER_DEPS)$(SIZEDUMMY) libArduinoMemory.a
+	-$(RM) $(OBJS)$(C_DEPS)$(LSS)$(S_DEPS)$(CXX_DEPS)$(S_UPPER_DEPS)$(C++_DEPS)$(ASM_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(C_UPPER_DEPS)$(SIZEDUMMY) libArduinoMemoryDriver.a
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(SIZEDUMMY)
