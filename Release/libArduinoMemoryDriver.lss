@@ -1,0 +1,1220 @@
+In archive libArduinoMemoryDriver.a:
+
+ExternalMappedEeprom.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000034  2**0
+                  ALLOC
+  3 .text._ZN20ExternalMappedEeprom10writeBlockEjPhi 0000003a  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  4 .text._ZN20ExternalMappedEeprom9readBlockEjPhi 0000003a  00000000  00000000  0000006e  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  5 .text._ZN20ExternalMappedEepromC1EP14ExternalEepromjj 00000050  00000000  00000000  000000a8  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  6 .text._ZN20ExternalMappedEepromC2EP14ExternalEepromjj 00000050  00000000  00000000  000000f8  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  7 .rodata._ZTV20ExternalMappedEeprom 00000012  00000000  00000000  00000148  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+Disassembly of section .text._ZN20ExternalMappedEeprom10writeBlockEjPhi:
+
+00000000 <_ZN20ExternalMappedEeprom10writeBlockEjPhi>:
+   0:	fc 01       	movw	r30, r24
+   2:	81 85       	ldd	r24, Z+9	; 0x09
+   4:	92 85       	ldd	r25, Z+10	; 0x0a
+   6:	68 0f       	add	r22, r24
+   8:	79 1f       	adc	r23, r25
+   a:	83 85       	ldd	r24, Z+11	; 0x0b
+   c:	94 85       	ldd	r25, Z+12	; 0x0c
+   e:	68 17       	cp	r22, r24
+  10:	79 07       	cpc	r23, r25
+  12:	00 f4       	brcc	.+0      	; 0x14 <_ZN20ExternalMappedEeprom10writeBlockEjPhi+0x14>
+  14:	86 1b       	sub	r24, r22
+  16:	97 0b       	sbc	r25, r23
+  18:	82 17       	cp	r24, r18
+  1a:	93 07       	cpc	r25, r19
+  1c:	00 f4       	brcc	.+0      	; 0x1e <_ZN20ExternalMappedEeprom10writeBlockEjPhi+0x1e>
+  1e:	9c 01       	movw	r18, r24
+  20:	07 80       	ldd	r0, Z+7	; 0x07
+  22:	f0 85       	ldd	r31, Z+8	; 0x08
+  24:	e0 2d       	mov	r30, r0
+  26:	a0 81       	ld	r26, Z
+  28:	b1 81       	ldd	r27, Z+1	; 0x01
+  2a:	1a 96       	adiw	r26, 0x0a	; 10
+  2c:	0d 90       	ld	r0, X+
+  2e:	bc 91       	ld	r27, X
+  30:	a0 2d       	mov	r26, r0
+  32:	cf 01       	movw	r24, r30
+  34:	fd 01       	movw	r30, r26
+  36:	09 95       	icall
+  38:	08 95       	ret
+Disassembly of section .text._ZN20ExternalMappedEeprom9readBlockEjPhi:
+
+00000000 <_ZN20ExternalMappedEeprom9readBlockEjPhi>:
+   0:	fc 01       	movw	r30, r24
+   2:	81 85       	ldd	r24, Z+9	; 0x09
+   4:	92 85       	ldd	r25, Z+10	; 0x0a
+   6:	68 0f       	add	r22, r24
+   8:	79 1f       	adc	r23, r25
+   a:	83 85       	ldd	r24, Z+11	; 0x0b
+   c:	94 85       	ldd	r25, Z+12	; 0x0c
+   e:	68 17       	cp	r22, r24
+  10:	79 07       	cpc	r23, r25
+  12:	00 f4       	brcc	.+0      	; 0x14 <_ZN20ExternalMappedEeprom9readBlockEjPhi+0x14>
+  14:	86 1b       	sub	r24, r22
+  16:	97 0b       	sbc	r25, r23
+  18:	82 17       	cp	r24, r18
+  1a:	93 07       	cpc	r25, r19
+  1c:	00 f4       	brcc	.+0      	; 0x1e <_ZN20ExternalMappedEeprom9readBlockEjPhi+0x1e>
+  1e:	9c 01       	movw	r18, r24
+  20:	07 80       	ldd	r0, Z+7	; 0x07
+  22:	f0 85       	ldd	r31, Z+8	; 0x08
+  24:	e0 2d       	mov	r30, r0
+  26:	a0 81       	ld	r26, Z
+  28:	b1 81       	ldd	r27, Z+1	; 0x01
+  2a:	1c 96       	adiw	r26, 0x0c	; 12
+  2c:	0d 90       	ld	r0, X+
+  2e:	bc 91       	ld	r27, X
+  30:	a0 2d       	mov	r26, r0
+  32:	cf 01       	movw	r24, r30
+  34:	fd 01       	movw	r30, r26
+  36:	09 95       	icall
+  38:	08 95       	ret
+Disassembly of section .text._ZN20ExternalMappedEepromC1EP14ExternalEepromjj:
+
+00000000 <_ZN20ExternalMappedEepromC1EP14ExternalEepromjj>:
+   0:	af 92       	push	r10
+   2:	bf 92       	push	r11
+   4:	cf 92       	push	r12
+   6:	df 92       	push	r13
+   8:	ef 92       	push	r14
+   a:	ff 92       	push	r15
+   c:	0f 93       	push	r16
+   e:	1f 93       	push	r17
+  10:	7c 01       	movw	r14, r24
+  12:	8b 01       	movw	r16, r22
+  14:	6a 01       	movw	r12, r20
+  16:	59 01       	movw	r10, r18
+  18:	fb 01       	movw	r30, r22
+  1a:	64 81       	ldd	r22, Z+4	; 0x04
+  1c:	75 81       	ldd	r23, Z+5	; 0x05
+  1e:	42 81       	ldd	r20, Z+2	; 0x02
+  20:	53 81       	ldd	r21, Z+3	; 0x03
+  22:	26 81       	ldd	r18, Z+6	; 0x06
+  24:	0e 94 00 00 	call	0	; 0x0 <_ZN20ExternalMappedEepromC1EP14ExternalEepromjj>
+  28:	80 e0       	ldi	r24, 0x00	; 0
+  2a:	90 e0       	ldi	r25, 0x00	; 0
+  2c:	f7 01       	movw	r30, r14
+  2e:	91 83       	std	Z+1, r25	; 0x01
+  30:	80 83       	st	Z, r24
+  32:	10 87       	std	Z+8, r17	; 0x08
+  34:	07 83       	std	Z+7, r16	; 0x07
+  36:	d2 86       	std	Z+10, r13	; 0x0a
+  38:	c1 86       	std	Z+9, r12	; 0x09
+  3a:	b4 86       	std	Z+12, r11	; 0x0c
+  3c:	a3 86       	std	Z+11, r10	; 0x0b
+  3e:	1f 91       	pop	r17
+  40:	0f 91       	pop	r16
+  42:	ff 90       	pop	r15
+  44:	ef 90       	pop	r14
+  46:	df 90       	pop	r13
+  48:	cf 90       	pop	r12
+  4a:	bf 90       	pop	r11
+  4c:	af 90       	pop	r10
+  4e:	08 95       	ret
+Disassembly of section .text._ZN20ExternalMappedEepromC2EP14ExternalEepromjj:
+
+00000000 <_ZN20ExternalMappedEepromC2EP14ExternalEepromjj>:
+   0:	af 92       	push	r10
+   2:	bf 92       	push	r11
+   4:	cf 92       	push	r12
+   6:	df 92       	push	r13
+   8:	ef 92       	push	r14
+   a:	ff 92       	push	r15
+   c:	0f 93       	push	r16
+   e:	1f 93       	push	r17
+  10:	7c 01       	movw	r14, r24
+  12:	8b 01       	movw	r16, r22
+  14:	6a 01       	movw	r12, r20
+  16:	59 01       	movw	r10, r18
+  18:	fb 01       	movw	r30, r22
+  1a:	64 81       	ldd	r22, Z+4	; 0x04
+  1c:	75 81       	ldd	r23, Z+5	; 0x05
+  1e:	42 81       	ldd	r20, Z+2	; 0x02
+  20:	53 81       	ldd	r21, Z+3	; 0x03
+  22:	26 81       	ldd	r18, Z+6	; 0x06
+  24:	0e 94 00 00 	call	0	; 0x0 <_ZN20ExternalMappedEepromC2EP14ExternalEepromjj>
+  28:	80 e0       	ldi	r24, 0x00	; 0
+  2a:	90 e0       	ldi	r25, 0x00	; 0
+  2c:	f7 01       	movw	r30, r14
+  2e:	91 83       	std	Z+1, r25	; 0x01
+  30:	80 83       	st	Z, r24
+  32:	10 87       	std	Z+8, r17	; 0x08
+  34:	07 83       	std	Z+7, r16	; 0x07
+  36:	d2 86       	std	Z+10, r13	; 0x0a
+  38:	c1 86       	std	Z+9, r12	; 0x09
+  3a:	b4 86       	std	Z+12, r11	; 0x0c
+  3c:	a3 86       	std	Z+11, r10	; 0x0b
+  3e:	1f 91       	pop	r17
+  40:	0f 91       	pop	r16
+  42:	ff 90       	pop	r15
+  44:	ef 90       	pop	r14
+  46:	df 90       	pop	r13
+  48:	cf 90       	pop	r12
+  4a:	bf 90       	pop	r11
+  4c:	af 90       	pop	r10
+  4e:	08 95       	ret
+
+ExternalFileEeprom.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000034  2**0
+                  ALLOC
+
+ExternalEeprom.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000034  2**0
+                  ALLOC
+  3 .text._ZN14ExternalEepromC2Eijh 00000016  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  4 .text._ZN14ExternalEepromC1Eijh 00000016  00000000  00000000  0000004a  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  5 .text._ZN14ExternalEeprom5writeEjh 0000002c  00000000  00000000  00000060  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  6 .text._ZN14ExternalEeprom10writeBytesEjPhi 000000be  00000000  00000000  0000008c  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  7 .text._ZN14ExternalEeprom4readEj 0000003e  00000000  00000000  0000014a  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  8 .text._ZN14ExternalEeprom9readBytesEjPhi 000000b0  00000000  00000000  00000188  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  9 .text._ZN14ExternalEeprom9endOfPageEj 00000032  00000000  00000000  00000238  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 10 .text._ZN14ExternalEeprom10writeBlockEjPhi 00000002  00000000  00000000  0000026a  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 11 .text._ZN14ExternalEeprom9readBlockEjPhi 00000002  00000000  00000000  0000026c  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 12 .text._ZN14ExternalEeprom8setBytesEjhi 0000014e  00000000  00000000  0000026e  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 13 .rodata._ZTV14ExternalEeprom 00000012  00000000  00000000  000003bc  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+Disassembly of section .text._ZN14ExternalEepromC2Eijh:
+
+00000000 <_ZN14ExternalEepromC2Eijh>:
+   0:	fc 01       	movw	r30, r24
+   2:	80 e0       	ldi	r24, 0x00	; 0
+   4:	90 e0       	ldi	r25, 0x00	; 0
+   6:	91 83       	std	Z+1, r25	; 0x01
+   8:	80 83       	st	Z, r24
+   a:	75 83       	std	Z+5, r23	; 0x05
+   c:	64 83       	std	Z+4, r22	; 0x04
+   e:	27 70       	andi	r18, 0x07	; 7
+  10:	20 65       	ori	r18, 0x50	; 80
+  12:	26 83       	std	Z+6, r18	; 0x06
+  14:	08 95       	ret
+Disassembly of section .text._ZN14ExternalEepromC1Eijh:
+
+00000000 <_ZN14ExternalEepromC1Eijh>:
+   0:	fc 01       	movw	r30, r24
+   2:	80 e0       	ldi	r24, 0x00	; 0
+   4:	90 e0       	ldi	r25, 0x00	; 0
+   6:	91 83       	std	Z+1, r25	; 0x01
+   8:	80 83       	st	Z, r24
+   a:	75 83       	std	Z+5, r23	; 0x05
+   c:	64 83       	std	Z+4, r22	; 0x04
+   e:	27 70       	andi	r18, 0x07	; 7
+  10:	20 65       	ori	r18, 0x50	; 80
+  12:	26 83       	std	Z+6, r18	; 0x06
+  14:	08 95       	ret
+Disassembly of section .text._ZN14ExternalEeprom5writeEjh:
+
+00000000 <_ZN14ExternalEeprom5writeEjh>:
+   0:	df 93       	push	r29
+   2:	cf 93       	push	r28
+   4:	0f 92       	push	r0
+   6:	cd b7       	in	r28, 0x3d	; 61
+   8:	de b7       	in	r29, 0x3e	; 62
+   a:	dc 01       	movw	r26, r24
+   c:	49 83       	std	Y+1, r20	; 0x01
+   e:	ed 91       	ld	r30, X+
+  10:	fc 91       	ld	r31, X
+  12:	02 84       	ldd	r0, Z+10	; 0x0a
+  14:	f3 85       	ldd	r31, Z+11	; 0x0b
+  16:	e0 2d       	mov	r30, r0
+  18:	ae 01       	movw	r20, r28
+  1a:	4f 5f       	subi	r20, 0xFF	; 255
+  1c:	5f 4f       	sbci	r21, 0xFF	; 255
+  1e:	21 e0       	ldi	r18, 0x01	; 1
+  20:	30 e0       	ldi	r19, 0x00	; 0
+  22:	09 95       	icall
+  24:	0f 90       	pop	r0
+  26:	cf 91       	pop	r28
+  28:	df 91       	pop	r29
+  2a:	08 95       	ret
+Disassembly of section .text._ZN14ExternalEeprom10writeBytesEjPhi:
+
+00000000 <_ZN14ExternalEeprom10writeBytesEjPhi>:
+   0:	af 92       	push	r10
+   2:	bf 92       	push	r11
+   4:	cf 92       	push	r12
+   6:	df 92       	push	r13
+   8:	ef 92       	push	r14
+   a:	ff 92       	push	r15
+   c:	0f 93       	push	r16
+   e:	1f 93       	push	r17
+  10:	cf 93       	push	r28
+  12:	df 93       	push	r29
+  14:	6c 01       	movw	r12, r24
+  16:	7b 01       	movw	r14, r22
+  18:	5a 01       	movw	r10, r20
+  1a:	89 01       	movw	r16, r18
+  1c:	dc 01       	movw	r26, r24
+  1e:	12 96       	adiw	r26, 0x02	; 2
+  20:	2d 91       	ld	r18, X+
+  22:	3c 91       	ld	r19, X
+  24:	13 97       	sbiw	r26, 0x03	; 3
+  26:	26 1b       	sub	r18, r22
+  28:	37 0b       	sbc	r19, r23
+  2a:	01 f0       	breq	.+0      	; 0x2c <_ZN14ExternalEeprom10writeBytesEjPhi+0x2c>
+  2c:	80 2f       	mov	r24, r16
+  2e:	90 e0       	ldi	r25, 0x00	; 0
+  30:	28 17       	cp	r18, r24
+  32:	39 07       	cpc	r19, r25
+  34:	00 f4       	brcc	.+0      	; 0x36 <_ZN14ExternalEeprom10writeBytesEjPhi+0x36>
+  36:	89 01       	movw	r16, r18
+  38:	f6 01       	movw	r30, r12
+  3a:	24 81       	ldd	r18, Z+4	; 0x04
+  3c:	35 81       	ldd	r19, Z+5	; 0x05
+  3e:	c0 2f       	mov	r28, r16
+  40:	d0 e0       	ldi	r29, 0x00	; 0
+  42:	c9 01       	movw	r24, r18
+  44:	01 97       	sbiw	r24, 0x01	; 1
+  46:	8e 0d       	add	r24, r14
+  48:	9f 1d       	adc	r25, r15
+  4a:	b9 01       	movw	r22, r18
+  4c:	0e 94 00 00 	call	0	; 0x0 <_ZN14ExternalEeprom10writeBytesEjPhi>
+  50:	62 9f       	mul	r22, r18
+  52:	c0 01       	movw	r24, r0
+  54:	63 9f       	mul	r22, r19
+  56:	90 0d       	add	r25, r0
+  58:	72 9f       	mul	r23, r18
+  5a:	90 0d       	add	r25, r0
+  5c:	11 24       	eor	r1, r1
+  5e:	8e 19       	sub	r24, r14
+  60:	9f 09       	sbc	r25, r15
+  62:	8c 17       	cp	r24, r28
+  64:	9d 07       	cpc	r25, r29
+  66:	00 f4       	brcc	.+0      	; 0x68 <_ZN14ExternalEeprom10writeBytesEjPhi+0x68>
+  68:	ec 01       	movw	r28, r24
+  6a:	20 97       	sbiw	r28, 0x00	; 0
+  6c:	01 f4       	brne	.+0      	; 0x6e <_ZN14ExternalEeprom10writeBytesEjPhi+0x6e>
+  6e:	00 c0       	rjmp	.+0      	; 0x70 <_ZN14ExternalEeprom10writeBytesEjPhi+0x70>
+  70:	f6 01       	movw	r30, r12
+  72:	84 81       	ldd	r24, Z+4	; 0x04
+  74:	95 81       	ldd	r25, Z+5	; 0x05
+  76:	e8 01       	movw	r28, r16
+  78:	80 17       	cp	r24, r16
+  7a:	91 07       	cpc	r25, r17
+  7c:	04 f4       	brge	.+0      	; 0x7e <_ZN14ExternalEeprom10writeBytesEjPhi+0x7e>
+  7e:	ec 01       	movw	r28, r24
+  80:	d6 01       	movw	r26, r12
+  82:	ed 91       	ld	r30, X+
+  84:	fc 91       	ld	r31, X
+  86:	02 84       	ldd	r0, Z+10	; 0x0a
+  88:	f3 85       	ldd	r31, Z+11	; 0x0b
+  8a:	e0 2d       	mov	r30, r0
+  8c:	c6 01       	movw	r24, r12
+  8e:	b7 01       	movw	r22, r14
+  90:	a5 01       	movw	r20, r10
+  92:	9e 01       	movw	r18, r28
+  94:	09 95       	icall
+  96:	ec 0e       	add	r14, r28
+  98:	fd 1e       	adc	r15, r29
+  9a:	ac 0e       	add	r10, r28
+  9c:	bd 1e       	adc	r11, r29
+  9e:	0c 1b       	sub	r16, r28
+  a0:	1d 0b       	sbc	r17, r29
+  a2:	10 16       	cp	r1, r16
+  a4:	11 06       	cpc	r1, r17
+  a6:	04 f0       	brlt	.+0      	; 0xa8 <_ZN14ExternalEeprom10writeBytesEjPhi+0xa8>
+  a8:	df 91       	pop	r29
+  aa:	cf 91       	pop	r28
+  ac:	1f 91       	pop	r17
+  ae:	0f 91       	pop	r16
+  b0:	ff 90       	pop	r15
+  b2:	ef 90       	pop	r14
+  b4:	df 90       	pop	r13
+  b6:	cf 90       	pop	r12
+  b8:	bf 90       	pop	r11
+  ba:	af 90       	pop	r10
+  bc:	08 95       	ret
+Disassembly of section .text._ZN14ExternalEeprom4readEj:
+
+00000000 <_ZN14ExternalEeprom4readEj>:
+   0:	df 93       	push	r29
+   2:	cf 93       	push	r28
+   4:	0f 92       	push	r0
+   6:	cd b7       	in	r28, 0x3d	; 61
+   8:	de b7       	in	r29, 0x3e	; 62
+   a:	dc 01       	movw	r26, r24
+   c:	ed 91       	ld	r30, X+
+   e:	fc 91       	ld	r31, X
+  10:	06 80       	ldd	r0, Z+6	; 0x06
+  12:	f7 81       	ldd	r31, Z+7	; 0x07
+  14:	e0 2d       	mov	r30, r0
+  16:	ae 01       	movw	r20, r28
+  18:	4f 5f       	subi	r20, 0xFF	; 255
+  1a:	5f 4f       	sbci	r21, 0xFF	; 255
+  1c:	21 e0       	ldi	r18, 0x01	; 1
+  1e:	30 e0       	ldi	r19, 0x00	; 0
+  20:	09 95       	icall
+  22:	8f 5f       	subi	r24, 0xFF	; 255
+  24:	9f 4f       	sbci	r25, 0xFF	; 255
+  26:	01 f4       	brne	.+0      	; 0x28 <_ZN14ExternalEeprom4readEj+0x28>
+  28:	2f ef       	ldi	r18, 0xFF	; 255
+  2a:	3f ef       	ldi	r19, 0xFF	; 255
+  2c:	00 c0       	rjmp	.+0      	; 0x2e <_ZN14ExternalEeprom4readEj+0x2e>
+  2e:	89 81       	ldd	r24, Y+1	; 0x01
+  30:	28 2f       	mov	r18, r24
+  32:	30 e0       	ldi	r19, 0x00	; 0
+  34:	c9 01       	movw	r24, r18
+  36:	0f 90       	pop	r0
+  38:	cf 91       	pop	r28
+  3a:	df 91       	pop	r29
+  3c:	08 95       	ret
+Disassembly of section .text._ZN14ExternalEeprom9readBytesEjPhi:
+
+00000000 <_ZN14ExternalEeprom9readBytesEjPhi>:
+   0:	8f 92       	push	r8
+   2:	9f 92       	push	r9
+   4:	af 92       	push	r10
+   6:	bf 92       	push	r11
+   8:	cf 92       	push	r12
+   a:	df 92       	push	r13
+   c:	ef 92       	push	r14
+   e:	ff 92       	push	r15
+  10:	0f 93       	push	r16
+  12:	1f 93       	push	r17
+  14:	cf 93       	push	r28
+  16:	df 93       	push	r29
+  18:	6c 01       	movw	r12, r24
+  1a:	7b 01       	movw	r14, r22
+  1c:	5a 01       	movw	r10, r20
+  1e:	92 2e       	mov	r9, r18
+  20:	83 2e       	mov	r8, r19
+  22:	dc 01       	movw	r26, r24
+  24:	12 96       	adiw	r26, 0x02	; 2
+  26:	8d 91       	ld	r24, X+
+  28:	9c 91       	ld	r25, X
+  2a:	13 97       	sbiw	r26, 0x03	; 3
+  2c:	68 17       	cp	r22, r24
+  2e:	79 07       	cpc	r23, r25
+  30:	00 f0       	brcs	.+0      	; 0x32 <_ZN14ExternalEeprom9readBytesEjPhi+0x32>
+  32:	2f ef       	ldi	r18, 0xFF	; 255
+  34:	3f ef       	ldi	r19, 0xFF	; 255
+  36:	00 c0       	rjmp	.+0      	; 0x38 <_ZN14ExternalEeprom9readBytesEjPhi+0x38>
+  38:	9c 01       	movw	r18, r24
+  3a:	26 1b       	sub	r18, r22
+  3c:	37 0b       	sbc	r19, r23
+  3e:	89 2d       	mov	r24, r9
+  40:	90 e0       	ldi	r25, 0x00	; 0
+  42:	28 17       	cp	r18, r24
+  44:	39 07       	cpc	r19, r25
+  46:	00 f4       	brcc	.+0      	; 0x48 <_ZN14ExternalEeprom9readBytesEjPhi+0x48>
+  48:	92 2e       	mov	r9, r18
+  4a:	83 2e       	mov	r8, r19
+  4c:	89 2d       	mov	r24, r9
+  4e:	98 2d       	mov	r25, r8
+  50:	9c 01       	movw	r18, r24
+  52:	89 01       	movw	r16, r18
+  54:	00 c0       	rjmp	.+0      	; 0x56 <_ZN14ExternalEeprom9readBytesEjPhi+0x56>
+  56:	f6 01       	movw	r30, r12
+  58:	84 81       	ldd	r24, Z+4	; 0x04
+  5a:	95 81       	ldd	r25, Z+5	; 0x05
+  5c:	e8 01       	movw	r28, r16
+  5e:	80 17       	cp	r24, r16
+  60:	91 07       	cpc	r25, r17
+  62:	04 f4       	brge	.+0      	; 0x64 <_ZN14ExternalEeprom9readBytesEjPhi+0x64>
+  64:	ec 01       	movw	r28, r24
+  66:	d6 01       	movw	r26, r12
+  68:	ed 91       	ld	r30, X+
+  6a:	fc 91       	ld	r31, X
+  6c:	04 84       	ldd	r0, Z+12	; 0x0c
+  6e:	f5 85       	ldd	r31, Z+13	; 0x0d
+  70:	e0 2d       	mov	r30, r0
+  72:	c6 01       	movw	r24, r12
+  74:	b7 01       	movw	r22, r14
+  76:	a5 01       	movw	r20, r10
+  78:	9e 01       	movw	r18, r28
+  7a:	09 95       	icall
+  7c:	ec 0e       	add	r14, r28
+  7e:	fd 1e       	adc	r15, r29
+  80:	ac 0e       	add	r10, r28
+  82:	bd 1e       	adc	r11, r29
+  84:	0c 1b       	sub	r16, r28
+  86:	1d 0b       	sbc	r17, r29
+  88:	10 16       	cp	r1, r16
+  8a:	11 06       	cpc	r1, r17
+  8c:	04 f0       	brlt	.+0      	; 0x8e <_ZN14ExternalEeprom9readBytesEjPhi+0x8e>
+  8e:	89 2d       	mov	r24, r9
+  90:	98 2d       	mov	r25, r8
+  92:	9c 01       	movw	r18, r24
+  94:	c9 01       	movw	r24, r18
+  96:	df 91       	pop	r29
+  98:	cf 91       	pop	r28
+  9a:	1f 91       	pop	r17
+  9c:	0f 91       	pop	r16
+  9e:	ff 90       	pop	r15
+  a0:	ef 90       	pop	r14
+  a2:	df 90       	pop	r13
+  a4:	cf 90       	pop	r12
+  a6:	bf 90       	pop	r11
+  a8:	af 90       	pop	r10
+  aa:	9f 90       	pop	r9
+  ac:	8f 90       	pop	r8
+  ae:	08 95       	ret
+Disassembly of section .text._ZN14ExternalEeprom9endOfPageEj:
+
+00000000 <_ZN14ExternalEeprom9endOfPageEj>:
+   0:	fb 01       	movw	r30, r22
+   2:	dc 01       	movw	r26, r24
+   4:	14 96       	adiw	r26, 0x04	; 4
+   6:	2d 91       	ld	r18, X+
+   8:	3c 91       	ld	r19, X
+   a:	15 97       	sbiw	r26, 0x05	; 5
+   c:	c9 01       	movw	r24, r18
+   e:	01 97       	sbiw	r24, 0x01	; 1
+  10:	86 0f       	add	r24, r22
+  12:	97 1f       	adc	r25, r23
+  14:	b9 01       	movw	r22, r18
+  16:	0e 94 00 00 	call	0	; 0x0 <_ZN14ExternalEeprom9endOfPageEj>
+  1a:	c9 01       	movw	r24, r18
+  1c:	68 9f       	mul	r22, r24
+  1e:	90 01       	movw	r18, r0
+  20:	69 9f       	mul	r22, r25
+  22:	30 0d       	add	r19, r0
+  24:	78 9f       	mul	r23, r24
+  26:	30 0d       	add	r19, r0
+  28:	11 24       	eor	r1, r1
+  2a:	2e 1b       	sub	r18, r30
+  2c:	3f 0b       	sbc	r19, r31
+  2e:	c9 01       	movw	r24, r18
+  30:	08 95       	ret
+Disassembly of section .text._ZN14ExternalEeprom10writeBlockEjPhi:
+
+00000000 <_ZN14ExternalEeprom10writeBlockEjPhi>:
+   0:	08 95       	ret
+Disassembly of section .text._ZN14ExternalEeprom9readBlockEjPhi:
+
+00000000 <_ZN14ExternalEeprom9readBlockEjPhi>:
+   0:	08 95       	ret
+Disassembly of section .text._ZN14ExternalEeprom8setBytesEjhi:
+
+00000000 <_ZN14ExternalEeprom8setBytesEjhi>:
+   0:	4f 92       	push	r4
+   2:	5f 92       	push	r5
+   4:	7f 92       	push	r7
+   6:	8f 92       	push	r8
+   8:	9f 92       	push	r9
+   a:	af 92       	push	r10
+   c:	bf 92       	push	r11
+   e:	cf 92       	push	r12
+  10:	df 92       	push	r13
+  12:	ef 92       	push	r14
+  14:	ff 92       	push	r15
+  16:	0f 93       	push	r16
+  18:	1f 93       	push	r17
+  1a:	df 93       	push	r29
+  1c:	cf 93       	push	r28
+  1e:	cd b7       	in	r28, 0x3d	; 61
+  20:	de b7       	in	r29, 0x3e	; 62
+  22:	5c 01       	movw	r10, r24
+  24:	6b 01       	movw	r12, r22
+  26:	79 01       	movw	r14, r18
+  28:	4d b6       	in	r4, 0x3d	; 61
+  2a:	5e b6       	in	r5, 0x3e	; 62
+  2c:	dc 01       	movw	r26, r24
+  2e:	14 96       	adiw	r26, 0x04	; 4
+  30:	8d 91       	ld	r24, X+
+  32:	9c 91       	ld	r25, X
+  34:	15 97       	sbiw	r26, 0x05	; 5
+  36:	ed b7       	in	r30, 0x3d	; 61
+  38:	fe b7       	in	r31, 0x3e	; 62
+  3a:	e8 1b       	sub	r30, r24
+  3c:	f9 0b       	sbc	r31, r25
+  3e:	0f b6       	in	r0, 0x3f	; 63
+  40:	f8 94       	cli
+  42:	fe bf       	out	0x3e, r31	; 62
+  44:	0f be       	out	0x3f, r0	; 63
+  46:	ed bf       	out	0x3d, r30	; 61
+  48:	8d b6       	in	r8, 0x3d	; 61
+  4a:	9e b6       	in	r9, 0x3e	; 62
+  4c:	08 94       	sec
+  4e:	81 1c       	adc	r8, r1
+  50:	91 1c       	adc	r9, r1
+  52:	12 96       	adiw	r26, 0x02	; 2
+  54:	8d 91       	ld	r24, X+
+  56:	9c 91       	ld	r25, X
+  58:	13 97       	sbiw	r26, 0x03	; 3
+  5a:	68 17       	cp	r22, r24
+  5c:	79 07       	cpc	r23, r25
+  5e:	00 f0       	brcs	.+0      	; 0x60 <_ZN14ExternalEeprom8setBytesEjhi+0x60>
+  60:	ee 24       	eor	r14, r14
+  62:	ea 94       	dec	r14
+  64:	fe 2c       	mov	r15, r14
+  66:	00 c0       	rjmp	.+0      	; 0x68 <_ZN14ExternalEeprom8setBytesEjhi+0x68>
+  68:	9c 01       	movw	r18, r24
+  6a:	26 1b       	sub	r18, r22
+  6c:	37 0b       	sbc	r19, r23
+  6e:	8e 2d       	mov	r24, r14
+  70:	90 e0       	ldi	r25, 0x00	; 0
+  72:	28 17       	cp	r18, r24
+  74:	39 07       	cpc	r19, r25
+  76:	00 f4       	brcc	.+0      	; 0x78 <_ZN14ExternalEeprom8setBytesEjhi+0x78>
+  78:	79 01       	movw	r14, r18
+  7a:	80 e0       	ldi	r24, 0x00	; 0
+  7c:	90 e0       	ldi	r25, 0x00	; 0
+  7e:	00 c0       	rjmp	.+0      	; 0x80 <_ZN14ExternalEeprom8setBytesEjhi+0x80>
+  80:	f4 01       	movw	r30, r8
+  82:	e8 0f       	add	r30, r24
+  84:	f9 1f       	adc	r31, r25
+  86:	40 83       	st	Z, r20
+  88:	01 96       	adiw	r24, 0x01	; 1
+  8a:	d5 01       	movw	r26, r10
+  8c:	14 96       	adiw	r26, 0x04	; 4
+  8e:	ed 91       	ld	r30, X+
+  90:	fc 91       	ld	r31, X
+  92:	15 97       	sbiw	r26, 0x05	; 5
+  94:	8e 17       	cp	r24, r30
+  96:	9f 07       	cpc	r25, r31
+  98:	04 f0       	brlt	.+0      	; 0x9a <_ZN14ExternalEeprom8setBytesEjhi+0x9a>
+  9a:	c6 01       	movw	r24, r12
+  9c:	01 97       	sbiw	r24, 0x01	; 1
+  9e:	8e 0f       	add	r24, r30
+  a0:	9f 1f       	adc	r25, r31
+  a2:	bf 01       	movw	r22, r30
+  a4:	0e 94 00 00 	call	0	; 0x0 <_ZN14ExternalEeprom8setBytesEjhi>
+  a8:	6e 9f       	mul	r22, r30
+  aa:	90 01       	movw	r18, r0
+  ac:	6f 9f       	mul	r22, r31
+  ae:	30 0d       	add	r19, r0
+  b0:	7e 9f       	mul	r23, r30
+  b2:	30 0d       	add	r19, r0
+  b4:	11 24       	eor	r1, r1
+  b6:	2c 19       	sub	r18, r12
+  b8:	3d 09       	sbc	r19, r13
+  ba:	12 16       	cp	r1, r18
+  bc:	13 06       	cpc	r1, r19
+  be:	04 f4       	brge	.+0      	; 0xc0 <_ZN14ExternalEeprom8setBytesEjhi+0xc0>
+  c0:	89 01       	movw	r16, r18
+  c2:	e2 16       	cp	r14, r18
+  c4:	f3 06       	cpc	r15, r19
+  c6:	04 f4       	brge	.+0      	; 0xc8 <_ZN14ExternalEeprom8setBytesEjhi+0xc8>
+  c8:	87 01       	movw	r16, r14
+  ca:	d5 01       	movw	r26, r10
+  cc:	ed 91       	ld	r30, X+
+  ce:	fc 91       	ld	r31, X
+  d0:	02 84       	ldd	r0, Z+10	; 0x0a
+  d2:	f3 85       	ldd	r31, Z+11	; 0x0b
+  d4:	e0 2d       	mov	r30, r0
+  d6:	c5 01       	movw	r24, r10
+  d8:	b6 01       	movw	r22, r12
+  da:	a4 01       	movw	r20, r8
+  dc:	98 01       	movw	r18, r16
+  de:	09 95       	icall
+  e0:	c0 0e       	add	r12, r16
+  e2:	d1 1e       	adc	r13, r17
+  e4:	e0 1a       	sub	r14, r16
+  e6:	f1 0a       	sbc	r15, r17
+  e8:	78 2c       	mov	r7, r8
+  ea:	00 c0       	rjmp	.+0      	; 0xec <_ZN14ExternalEeprom8setBytesEjhi+0xec>
+  ec:	f5 01       	movw	r30, r10
+  ee:	84 81       	ldd	r24, Z+4	; 0x04
+  f0:	95 81       	ldd	r25, Z+5	; 0x05
+  f2:	87 01       	movw	r16, r14
+  f4:	8e 15       	cp	r24, r14
+  f6:	9f 05       	cpc	r25, r15
+  f8:	04 f4       	brge	.+0      	; 0xfa <_ZN14ExternalEeprom8setBytesEjhi+0xfa>
+  fa:	8c 01       	movw	r16, r24
+  fc:	d5 01       	movw	r26, r10
+  fe:	ed 91       	ld	r30, X+
+ 100:	fc 91       	ld	r31, X
+ 102:	02 84       	ldd	r0, Z+10	; 0x0a
+ 104:	f3 85       	ldd	r31, Z+11	; 0x0b
+ 106:	e0 2d       	mov	r30, r0
+ 108:	c5 01       	movw	r24, r10
+ 10a:	b6 01       	movw	r22, r12
+ 10c:	47 2d       	mov	r20, r7
+ 10e:	59 2d       	mov	r21, r9
+ 110:	98 01       	movw	r18, r16
+ 112:	09 95       	icall
+ 114:	c0 0e       	add	r12, r16
+ 116:	d1 1e       	adc	r13, r17
+ 118:	e0 1a       	sub	r14, r16
+ 11a:	f1 0a       	sbc	r15, r17
+ 11c:	1e 14       	cp	r1, r14
+ 11e:	1f 04       	cpc	r1, r15
+ 120:	04 f0       	brlt	.+0      	; 0x122 <_ZN14ExternalEeprom8setBytesEjhi+0x122>
+ 122:	c7 01       	movw	r24, r14
+ 124:	0f b6       	in	r0, 0x3f	; 63
+ 126:	f8 94       	cli
+ 128:	5e be       	out	0x3e, r5	; 62
+ 12a:	0f be       	out	0x3f, r0	; 63
+ 12c:	4d be       	out	0x3d, r4	; 61
+ 12e:	cf 91       	pop	r28
+ 130:	df 91       	pop	r29
+ 132:	1f 91       	pop	r17
+ 134:	0f 91       	pop	r16
+ 136:	ff 90       	pop	r15
+ 138:	ef 90       	pop	r14
+ 13a:	df 90       	pop	r13
+ 13c:	cf 90       	pop	r12
+ 13e:	bf 90       	pop	r11
+ 140:	af 90       	pop	r10
+ 142:	9f 90       	pop	r9
+ 144:	8f 90       	pop	r8
+ 146:	7f 90       	pop	r7
+ 148:	5f 90       	pop	r5
+ 14a:	4f 90       	pop	r4
+ 14c:	08 95       	ret
+
+ExternalByteArrayEeprom.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000034  2**0
+                  ALLOC
+  3 .text._ZN23ExternalByteArrayEeprom10writeBlockEjPhi 00000046  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  4 .text._ZN23ExternalByteArrayEeprom9readBlockEjPhi 0000004c  00000000  00000000  0000007a  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  5 .text._ZN23ExternalByteArrayEepromC1EPhj 0000002e  00000000  00000000  000000c6  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  6 .text._ZN23ExternalByteArrayEepromC2EPhj 0000002e  00000000  00000000  000000f4  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  7 .rodata._ZTV23ExternalByteArrayEeprom 00000012  00000000  00000000  00000122  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+Disassembly of section .text._ZN23ExternalByteArrayEeprom10writeBlockEjPhi:
+
+00000000 <_ZN23ExternalByteArrayEeprom10writeBlockEjPhi>:
+   0:	0f 93       	push	r16
+   2:	1f 93       	push	r17
+   4:	cf 93       	push	r28
+   6:	df 93       	push	r29
+   8:	8c 01       	movw	r16, r24
+   a:	eb 01       	movw	r28, r22
+   c:	ba 01       	movw	r22, r20
+   e:	a9 01       	movw	r20, r18
+  10:	20 e0       	ldi	r18, 0x00	; 0
+  12:	30 e0       	ldi	r19, 0x00	; 0
+  14:	00 c0       	rjmp	.+0      	; 0x16 <_ZN23ExternalByteArrayEeprom10writeBlockEjPhi+0x16>
+  16:	d8 01       	movw	r26, r16
+  18:	17 96       	adiw	r26, 0x07	; 7
+  1a:	ed 91       	ld	r30, X+
+  1c:	fc 91       	ld	r31, X
+  1e:	18 97       	sbiw	r26, 0x08	; 8
+  20:	e2 0f       	add	r30, r18
+  22:	f3 1f       	adc	r31, r19
+  24:	ec 0f       	add	r30, r28
+  26:	fd 1f       	adc	r31, r29
+  28:	db 01       	movw	r26, r22
+  2a:	a2 0f       	add	r26, r18
+  2c:	b3 1f       	adc	r27, r19
+  2e:	8c 91       	ld	r24, X
+  30:	80 83       	st	Z, r24
+  32:	2f 5f       	subi	r18, 0xFF	; 255
+  34:	3f 4f       	sbci	r19, 0xFF	; 255
+  36:	24 17       	cp	r18, r20
+  38:	35 07       	cpc	r19, r21
+  3a:	04 f0       	brlt	.+0      	; 0x3c <_ZN23ExternalByteArrayEeprom10writeBlockEjPhi+0x3c>
+  3c:	df 91       	pop	r29
+  3e:	cf 91       	pop	r28
+  40:	1f 91       	pop	r17
+  42:	0f 91       	pop	r16
+  44:	08 95       	ret
+Disassembly of section .text._ZN23ExternalByteArrayEeprom9readBlockEjPhi:
+
+00000000 <_ZN23ExternalByteArrayEeprom9readBlockEjPhi>:
+   0:	ef 92       	push	r14
+   2:	ff 92       	push	r15
+   4:	0f 93       	push	r16
+   6:	1f 93       	push	r17
+   8:	cf 93       	push	r28
+   a:	df 93       	push	r29
+   c:	8c 01       	movw	r16, r24
+   e:	eb 01       	movw	r28, r22
+  10:	ba 01       	movw	r22, r20
+  12:	a9 01       	movw	r20, r18
+  14:	20 e0       	ldi	r18, 0x00	; 0
+  16:	30 e0       	ldi	r19, 0x00	; 0
+  18:	00 c0       	rjmp	.+0      	; 0x1a <_ZN23ExternalByteArrayEeprom9readBlockEjPhi+0x1a>
+  1a:	7b 01       	movw	r14, r22
+  1c:	e2 0e       	add	r14, r18
+  1e:	f3 1e       	adc	r15, r19
+  20:	f8 01       	movw	r30, r16
+  22:	a7 81       	ldd	r26, Z+7	; 0x07
+  24:	b0 85       	ldd	r27, Z+8	; 0x08
+  26:	a2 0f       	add	r26, r18
+  28:	b3 1f       	adc	r27, r19
+  2a:	ac 0f       	add	r26, r28
+  2c:	bd 1f       	adc	r27, r29
+  2e:	8c 91       	ld	r24, X
+  30:	f7 01       	movw	r30, r14
+  32:	80 83       	st	Z, r24
+  34:	2f 5f       	subi	r18, 0xFF	; 255
+  36:	3f 4f       	sbci	r19, 0xFF	; 255
+  38:	24 17       	cp	r18, r20
+  3a:	35 07       	cpc	r19, r21
+  3c:	04 f0       	brlt	.+0      	; 0x3e <_ZN23ExternalByteArrayEeprom9readBlockEjPhi+0x3e>
+  3e:	df 91       	pop	r29
+  40:	cf 91       	pop	r28
+  42:	1f 91       	pop	r17
+  44:	0f 91       	pop	r16
+  46:	ff 90       	pop	r15
+  48:	ef 90       	pop	r14
+  4a:	08 95       	ret
+Disassembly of section .text._ZN23ExternalByteArrayEepromC1EPhj:
+
+00000000 <_ZN23ExternalByteArrayEepromC1EPhj>:
+   0:	ef 92       	push	r14
+   2:	ff 92       	push	r15
+   4:	0f 93       	push	r16
+   6:	1f 93       	push	r17
+   8:	8c 01       	movw	r16, r24
+   a:	7b 01       	movw	r14, r22
+   c:	60 e1       	ldi	r22, 0x10	; 16
+   e:	70 e0       	ldi	r23, 0x00	; 0
+  10:	20 e0       	ldi	r18, 0x00	; 0
+  12:	0e 94 00 00 	call	0	; 0x0 <_ZN23ExternalByteArrayEepromC1EPhj>
+  16:	80 e0       	ldi	r24, 0x00	; 0
+  18:	90 e0       	ldi	r25, 0x00	; 0
+  1a:	f8 01       	movw	r30, r16
+  1c:	91 83       	std	Z+1, r25	; 0x01
+  1e:	80 83       	st	Z, r24
+  20:	f0 86       	std	Z+8, r15	; 0x08
+  22:	e7 82       	std	Z+7, r14	; 0x07
+  24:	1f 91       	pop	r17
+  26:	0f 91       	pop	r16
+  28:	ff 90       	pop	r15
+  2a:	ef 90       	pop	r14
+  2c:	08 95       	ret
+Disassembly of section .text._ZN23ExternalByteArrayEepromC2EPhj:
+
+00000000 <_ZN23ExternalByteArrayEepromC2EPhj>:
+   0:	ef 92       	push	r14
+   2:	ff 92       	push	r15
+   4:	0f 93       	push	r16
+   6:	1f 93       	push	r17
+   8:	8c 01       	movw	r16, r24
+   a:	7b 01       	movw	r14, r22
+   c:	60 e1       	ldi	r22, 0x10	; 16
+   e:	70 e0       	ldi	r23, 0x00	; 0
+  10:	20 e0       	ldi	r18, 0x00	; 0
+  12:	0e 94 00 00 	call	0	; 0x0 <_ZN23ExternalByteArrayEepromC2EPhj>
+  16:	80 e0       	ldi	r24, 0x00	; 0
+  18:	90 e0       	ldi	r25, 0x00	; 0
+  1a:	f8 01       	movw	r30, r16
+  1c:	91 83       	std	Z+1, r25	; 0x01
+  1e:	80 83       	st	Z, r24
+  20:	f0 86       	std	Z+8, r15	; 0x08
+  22:	e7 82       	std	Z+7, r14	; 0x07
+  24:	1f 91       	pop	r17
+  26:	0f 91       	pop	r16
+  28:	ff 90       	pop	r15
+  2a:	ef 90       	pop	r14
+  2c:	08 95       	ret
+
+External24x16Eeprom.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000034  2**0
+                  ALLOC
+  3 .text._ZN19External24x16Eeprom9readBlockEjPhi 0000007e  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  4 .text._ZN19External24x16Eeprom10writeBlockEjPhi 00000078  00000000  00000000  000000b2  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  5 .text._ZN19External24x16EepromC1Eh 0000002c  00000000  00000000  0000012a  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  6 .text._ZN19External24x16EepromC2Eh 0000002c  00000000  00000000  00000156  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  7 .rodata._ZTV19External24x16Eeprom 00000012  00000000  00000000  00000182  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+Disassembly of section .text._ZN19External24x16Eeprom9readBlockEjPhi:
+
+00000000 <_ZN19External24x16Eeprom9readBlockEjPhi>:
+   0:	ef 92       	push	r14
+   2:	ff 92       	push	r15
+   4:	0f 93       	push	r16
+   6:	1f 93       	push	r17
+   8:	cf 93       	push	r28
+   a:	df 93       	push	r29
+   c:	8b 01       	movw	r16, r22
+   e:	7a 01       	movw	r14, r20
+  10:	e9 01       	movw	r28, r18
+  12:	17 70       	andi	r17, 0x07	; 7
+  14:	fc 01       	movw	r30, r24
+  16:	86 81       	ldd	r24, Z+6	; 0x06
+  18:	18 2b       	or	r17, r24
+  1a:	80 e0       	ldi	r24, 0x00	; 0
+  1c:	90 e0       	ldi	r25, 0x00	; 0
+  1e:	61 2f       	mov	r22, r17
+  20:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom9readBlockEjPhi>
+  24:	80 e0       	ldi	r24, 0x00	; 0
+  26:	90 e0       	ldi	r25, 0x00	; 0
+  28:	60 2f       	mov	r22, r16
+  2a:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom9readBlockEjPhi>
+  2e:	80 e0       	ldi	r24, 0x00	; 0
+  30:	90 e0       	ldi	r25, 0x00	; 0
+  32:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom9readBlockEjPhi>
+  36:	80 e0       	ldi	r24, 0x00	; 0
+  38:	90 e0       	ldi	r25, 0x00	; 0
+  3a:	61 2f       	mov	r22, r17
+  3c:	70 e0       	ldi	r23, 0x00	; 0
+  3e:	ae 01       	movw	r20, r28
+  40:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom9readBlockEjPhi>
+  44:	00 e0       	ldi	r16, 0x00	; 0
+  46:	10 e0       	ldi	r17, 0x00	; 0
+  48:	00 c0       	rjmp	.+0      	; 0x4a <_ZN19External24x16Eeprom9readBlockEjPhi+0x4a>
+  4a:	80 e0       	ldi	r24, 0x00	; 0
+  4c:	90 e0       	ldi	r25, 0x00	; 0
+  4e:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom9readBlockEjPhi>
+  52:	89 2b       	or	r24, r25
+  54:	01 f0       	breq	.+0      	; 0x56 <_ZN19External24x16Eeprom9readBlockEjPhi+0x56>
+  56:	80 e0       	ldi	r24, 0x00	; 0
+  58:	90 e0       	ldi	r25, 0x00	; 0
+  5a:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom9readBlockEjPhi>
+  5e:	f7 01       	movw	r30, r14
+  60:	e0 0f       	add	r30, r16
+  62:	f1 1f       	adc	r31, r17
+  64:	80 83       	st	Z, r24
+  66:	0f 5f       	subi	r16, 0xFF	; 255
+  68:	1f 4f       	sbci	r17, 0xFF	; 255
+  6a:	0c 17       	cp	r16, r28
+  6c:	1d 07       	cpc	r17, r29
+  6e:	04 f0       	brlt	.+0      	; 0x70 <_ZN19External24x16Eeprom9readBlockEjPhi+0x70>
+  70:	df 91       	pop	r29
+  72:	cf 91       	pop	r28
+  74:	1f 91       	pop	r17
+  76:	0f 91       	pop	r16
+  78:	ff 90       	pop	r15
+  7a:	ef 90       	pop	r14
+  7c:	08 95       	ret
+Disassembly of section .text._ZN19External24x16Eeprom10writeBlockEjPhi:
+
+00000000 <_ZN19External24x16Eeprom10writeBlockEjPhi>:
+   0:	cf 92       	push	r12
+   2:	df 92       	push	r13
+   4:	ef 92       	push	r14
+   6:	ff 92       	push	r15
+   8:	1f 93       	push	r17
+   a:	cf 93       	push	r28
+   c:	df 93       	push	r29
+   e:	16 2f       	mov	r17, r22
+  10:	67 2f       	mov	r22, r23
+  12:	6a 01       	movw	r12, r20
+  14:	79 01       	movw	r14, r18
+  16:	67 70       	andi	r22, 0x07	; 7
+  18:	70 e0       	ldi	r23, 0x00	; 0
+  1a:	fc 01       	movw	r30, r24
+  1c:	86 81       	ldd	r24, Z+6	; 0x06
+  1e:	90 e0       	ldi	r25, 0x00	; 0
+  20:	68 2b       	or	r22, r24
+  22:	79 2b       	or	r23, r25
+  24:	80 e0       	ldi	r24, 0x00	; 0
+  26:	90 e0       	ldi	r25, 0x00	; 0
+  28:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom10writeBlockEjPhi>
+  2c:	80 e0       	ldi	r24, 0x00	; 0
+  2e:	90 e0       	ldi	r25, 0x00	; 0
+  30:	61 2f       	mov	r22, r17
+  32:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom10writeBlockEjPhi>
+  36:	c0 e0       	ldi	r28, 0x00	; 0
+  38:	d0 e0       	ldi	r29, 0x00	; 0
+  3a:	00 c0       	rjmp	.+0      	; 0x3c <_ZN19External24x16Eeprom10writeBlockEjPhi+0x3c>
+  3c:	f6 01       	movw	r30, r12
+  3e:	ec 0f       	add	r30, r28
+  40:	fd 1f       	adc	r31, r29
+  42:	80 e0       	ldi	r24, 0x00	; 0
+  44:	90 e0       	ldi	r25, 0x00	; 0
+  46:	60 81       	ld	r22, Z
+  48:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom10writeBlockEjPhi>
+  4c:	21 96       	adiw	r28, 0x01	; 1
+  4e:	ce 15       	cp	r28, r14
+  50:	df 05       	cpc	r29, r15
+  52:	04 f0       	brlt	.+0      	; 0x54 <_ZN19External24x16Eeprom10writeBlockEjPhi+0x54>
+  54:	80 e0       	ldi	r24, 0x00	; 0
+  56:	90 e0       	ldi	r25, 0x00	; 0
+  58:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom10writeBlockEjPhi>
+  5c:	65 e0       	ldi	r22, 0x05	; 5
+  5e:	70 e0       	ldi	r23, 0x00	; 0
+  60:	80 e0       	ldi	r24, 0x00	; 0
+  62:	90 e0       	ldi	r25, 0x00	; 0
+  64:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16Eeprom10writeBlockEjPhi>
+  68:	df 91       	pop	r29
+  6a:	cf 91       	pop	r28
+  6c:	1f 91       	pop	r17
+  6e:	ff 90       	pop	r15
+  70:	ef 90       	pop	r14
+  72:	df 90       	pop	r13
+  74:	cf 90       	pop	r12
+  76:	08 95       	ret
+Disassembly of section .text._ZN19External24x16EepromC1Eh:
+
+00000000 <_ZN19External24x16EepromC1Eh>:
+   0:	0f 93       	push	r16
+   2:	1f 93       	push	r17
+   4:	8c 01       	movw	r16, r24
+   6:	26 2f       	mov	r18, r22
+   8:	60 e2       	ldi	r22, 0x20	; 32
+   a:	70 e0       	ldi	r23, 0x00	; 0
+   c:	4f ef       	ldi	r20, 0xFF	; 255
+   e:	57 e0       	ldi	r21, 0x07	; 7
+  10:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16EepromC1Eh>
+  14:	80 e0       	ldi	r24, 0x00	; 0
+  16:	90 e0       	ldi	r25, 0x00	; 0
+  18:	f8 01       	movw	r30, r16
+  1a:	91 83       	std	Z+1, r25	; 0x01
+  1c:	80 83       	st	Z, r24
+  1e:	80 e0       	ldi	r24, 0x00	; 0
+  20:	90 e0       	ldi	r25, 0x00	; 0
+  22:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16EepromC1Eh>
+  26:	1f 91       	pop	r17
+  28:	0f 91       	pop	r16
+  2a:	08 95       	ret
+Disassembly of section .text._ZN19External24x16EepromC2Eh:
+
+00000000 <_ZN19External24x16EepromC2Eh>:
+   0:	0f 93       	push	r16
+   2:	1f 93       	push	r17
+   4:	8c 01       	movw	r16, r24
+   6:	26 2f       	mov	r18, r22
+   8:	60 e2       	ldi	r22, 0x20	; 32
+   a:	70 e0       	ldi	r23, 0x00	; 0
+   c:	4f ef       	ldi	r20, 0xFF	; 255
+   e:	57 e0       	ldi	r21, 0x07	; 7
+  10:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16EepromC2Eh>
+  14:	80 e0       	ldi	r24, 0x00	; 0
+  16:	90 e0       	ldi	r25, 0x00	; 0
+  18:	f8 01       	movw	r30, r16
+  1a:	91 83       	std	Z+1, r25	; 0x01
+  1c:	80 83       	st	Z, r24
+  1e:	80 e0       	ldi	r24, 0x00	; 0
+  20:	90 e0       	ldi	r25, 0x00	; 0
+  22:	0e 94 00 00 	call	0	; 0x0 <_ZN19External24x16EepromC2Eh>
+  26:	1f 91       	pop	r17
+  28:	0f 91       	pop	r16
+  2a:	08 95       	ret
+
+External24cl256Eeprom.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000034  2**0
+                  ALLOC
+  3 .text._ZN21External24cl256Eeprom9readBlockEjPhi 00000094  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  4 .text._ZN21External24cl256Eeprom10writeBlockEjPhi 00000074  00000000  00000000  000000c8  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  5 .text._ZN21External24cl256EepromC1Eh 0000002c  00000000  00000000  0000013c  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  6 .text._ZN21External24cl256EepromC2Eh 0000002c  00000000  00000000  00000168  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  7 .rodata._ZTV21External24cl256Eeprom 00000012  00000000  00000000  00000194  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+Disassembly of section .text._ZN21External24cl256Eeprom9readBlockEjPhi:
+
+00000000 <_ZN21External24cl256Eeprom9readBlockEjPhi>:
+   0:	af 92       	push	r10
+   2:	bf 92       	push	r11
+   4:	cf 92       	push	r12
+   6:	df 92       	push	r13
+   8:	ef 92       	push	r14
+   a:	ff 92       	push	r15
+   c:	0f 93       	push	r16
+   e:	1f 93       	push	r17
+  10:	cf 93       	push	r28
+  12:	df 93       	push	r29
+  14:	8c 01       	movw	r16, r24
+  16:	7b 01       	movw	r14, r22
+  18:	5a 01       	movw	r10, r20
+  1a:	69 01       	movw	r12, r18
+  1c:	80 e0       	ldi	r24, 0x00	; 0
+  1e:	90 e0       	ldi	r25, 0x00	; 0
+  20:	f8 01       	movw	r30, r16
+  22:	66 81       	ldd	r22, Z+6	; 0x06
+  24:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom9readBlockEjPhi>
+  28:	80 e0       	ldi	r24, 0x00	; 0
+  2a:	90 e0       	ldi	r25, 0x00	; 0
+  2c:	6f 2d       	mov	r22, r15
+  2e:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom9readBlockEjPhi>
+  32:	80 e0       	ldi	r24, 0x00	; 0
+  34:	90 e0       	ldi	r25, 0x00	; 0
+  36:	6e 2d       	mov	r22, r14
+  38:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom9readBlockEjPhi>
+  3c:	80 e0       	ldi	r24, 0x00	; 0
+  3e:	90 e0       	ldi	r25, 0x00	; 0
+  40:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom9readBlockEjPhi>
+  44:	f8 01       	movw	r30, r16
+  46:	66 81       	ldd	r22, Z+6	; 0x06
+  48:	80 e0       	ldi	r24, 0x00	; 0
+  4a:	90 e0       	ldi	r25, 0x00	; 0
+  4c:	70 e0       	ldi	r23, 0x00	; 0
+  4e:	a6 01       	movw	r20, r12
+  50:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom9readBlockEjPhi>
+  54:	c0 e0       	ldi	r28, 0x00	; 0
+  56:	d0 e0       	ldi	r29, 0x00	; 0
+  58:	00 c0       	rjmp	.+0      	; 0x5a <_ZN21External24cl256Eeprom9readBlockEjPhi+0x5a>
+  5a:	80 e0       	ldi	r24, 0x00	; 0
+  5c:	90 e0       	ldi	r25, 0x00	; 0
+  5e:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom9readBlockEjPhi>
+  62:	89 2b       	or	r24, r25
+  64:	01 f0       	breq	.+0      	; 0x66 <_ZN21External24cl256Eeprom9readBlockEjPhi+0x66>
+  66:	80 e0       	ldi	r24, 0x00	; 0
+  68:	90 e0       	ldi	r25, 0x00	; 0
+  6a:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom9readBlockEjPhi>
+  6e:	f5 01       	movw	r30, r10
+  70:	ec 0f       	add	r30, r28
+  72:	fd 1f       	adc	r31, r29
+  74:	80 83       	st	Z, r24
+  76:	21 96       	adiw	r28, 0x01	; 1
+  78:	cc 15       	cp	r28, r12
+  7a:	dd 05       	cpc	r29, r13
+  7c:	04 f0       	brlt	.+0      	; 0x7e <_ZN21External24cl256Eeprom9readBlockEjPhi+0x7e>
+  7e:	df 91       	pop	r29
+  80:	cf 91       	pop	r28
+  82:	1f 91       	pop	r17
+  84:	0f 91       	pop	r16
+  86:	ff 90       	pop	r15
+  88:	ef 90       	pop	r14
+  8a:	df 90       	pop	r13
+  8c:	cf 90       	pop	r12
+  8e:	bf 90       	pop	r11
+  90:	af 90       	pop	r10
+  92:	08 95       	ret
+Disassembly of section .text._ZN21External24cl256Eeprom10writeBlockEjPhi:
+
+00000000 <_ZN21External24cl256Eeprom10writeBlockEjPhi>:
+   0:	ef 92       	push	r14
+   2:	ff 92       	push	r15
+   4:	0f 93       	push	r16
+   6:	1f 93       	push	r17
+   8:	cf 93       	push	r28
+   a:	df 93       	push	r29
+   c:	fc 01       	movw	r30, r24
+   e:	8b 01       	movw	r16, r22
+  10:	7a 01       	movw	r14, r20
+  12:	e9 01       	movw	r28, r18
+  14:	80 e0       	ldi	r24, 0x00	; 0
+  16:	90 e0       	ldi	r25, 0x00	; 0
+  18:	66 81       	ldd	r22, Z+6	; 0x06
+  1a:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom10writeBlockEjPhi>
+  1e:	80 e0       	ldi	r24, 0x00	; 0
+  20:	90 e0       	ldi	r25, 0x00	; 0
+  22:	61 2f       	mov	r22, r17
+  24:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom10writeBlockEjPhi>
+  28:	80 e0       	ldi	r24, 0x00	; 0
+  2a:	90 e0       	ldi	r25, 0x00	; 0
+  2c:	60 2f       	mov	r22, r16
+  2e:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom10writeBlockEjPhi>
+  32:	00 e0       	ldi	r16, 0x00	; 0
+  34:	10 e0       	ldi	r17, 0x00	; 0
+  36:	00 c0       	rjmp	.+0      	; 0x38 <_ZN21External24cl256Eeprom10writeBlockEjPhi+0x38>
+  38:	f7 01       	movw	r30, r14
+  3a:	e0 0f       	add	r30, r16
+  3c:	f1 1f       	adc	r31, r17
+  3e:	80 e0       	ldi	r24, 0x00	; 0
+  40:	90 e0       	ldi	r25, 0x00	; 0
+  42:	60 81       	ld	r22, Z
+  44:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom10writeBlockEjPhi>
+  48:	0f 5f       	subi	r16, 0xFF	; 255
+  4a:	1f 4f       	sbci	r17, 0xFF	; 255
+  4c:	0c 17       	cp	r16, r28
+  4e:	1d 07       	cpc	r17, r29
+  50:	04 f0       	brlt	.+0      	; 0x52 <_ZN21External24cl256Eeprom10writeBlockEjPhi+0x52>
+  52:	80 e0       	ldi	r24, 0x00	; 0
+  54:	90 e0       	ldi	r25, 0x00	; 0
+  56:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom10writeBlockEjPhi>
+  5a:	65 e0       	ldi	r22, 0x05	; 5
+  5c:	70 e0       	ldi	r23, 0x00	; 0
+  5e:	80 e0       	ldi	r24, 0x00	; 0
+  60:	90 e0       	ldi	r25, 0x00	; 0
+  62:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256Eeprom10writeBlockEjPhi>
+  66:	df 91       	pop	r29
+  68:	cf 91       	pop	r28
+  6a:	1f 91       	pop	r17
+  6c:	0f 91       	pop	r16
+  6e:	ff 90       	pop	r15
+  70:	ef 90       	pop	r14
+  72:	08 95       	ret
+Disassembly of section .text._ZN21External24cl256EepromC1Eh:
+
+00000000 <_ZN21External24cl256EepromC1Eh>:
+   0:	0f 93       	push	r16
+   2:	1f 93       	push	r17
+   4:	8c 01       	movw	r16, r24
+   6:	26 2f       	mov	r18, r22
+   8:	60 e4       	ldi	r22, 0x40	; 64
+   a:	70 e0       	ldi	r23, 0x00	; 0
+   c:	4f ef       	ldi	r20, 0xFF	; 255
+   e:	5f e7       	ldi	r21, 0x7F	; 127
+  10:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256EepromC1Eh>
+  14:	80 e0       	ldi	r24, 0x00	; 0
+  16:	90 e0       	ldi	r25, 0x00	; 0
+  18:	f8 01       	movw	r30, r16
+  1a:	91 83       	std	Z+1, r25	; 0x01
+  1c:	80 83       	st	Z, r24
+  1e:	80 e0       	ldi	r24, 0x00	; 0
+  20:	90 e0       	ldi	r25, 0x00	; 0
+  22:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256EepromC1Eh>
+  26:	1f 91       	pop	r17
+  28:	0f 91       	pop	r16
+  2a:	08 95       	ret
+Disassembly of section .text._ZN21External24cl256EepromC2Eh:
+
+00000000 <_ZN21External24cl256EepromC2Eh>:
+   0:	0f 93       	push	r16
+   2:	1f 93       	push	r17
+   4:	8c 01       	movw	r16, r24
+   6:	26 2f       	mov	r18, r22
+   8:	60 e4       	ldi	r22, 0x40	; 64
+   a:	70 e0       	ldi	r23, 0x00	; 0
+   c:	4f ef       	ldi	r20, 0xFF	; 255
+   e:	5f e7       	ldi	r21, 0x7F	; 127
+  10:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256EepromC2Eh>
+  14:	80 e0       	ldi	r24, 0x00	; 0
+  16:	90 e0       	ldi	r25, 0x00	; 0
+  18:	f8 01       	movw	r30, r16
+  1a:	91 83       	std	Z+1, r25	; 0x01
+  1c:	80 83       	st	Z, r24
+  1e:	80 e0       	ldi	r24, 0x00	; 0
+  20:	90 e0       	ldi	r25, 0x00	; 0
+  22:	0e 94 00 00 	call	0	; 0x0 <_ZN21External24cl256EepromC2Eh>
+  26:	1f 91       	pop	r17
+  28:	0f 91       	pop	r16
+  2a:	08 95       	ret
