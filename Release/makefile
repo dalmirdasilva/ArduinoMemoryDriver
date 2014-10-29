@@ -82,7 +82,11 @@ sizedummy: libArduinoMemoryDriver.a
 
 # Other Targets
 clean:
+<<<<<<< HEAD
 	-$(RM) $(C_UPPER_DEPS)$(ARCHIVES)$(S_DEPS)$(LSS)$(C_DEPS)$(CC_DEPS)$(C++_DEPS)$(OBJS)$(CXX_DEPS)$(ASM_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(CPP_DEPS) libArduinoMemoryDriver.a
+=======
+	-$(RM) $(OBJS)$(C_DEPS)$(LSS)$(S_DEPS)$(CXX_DEPS)$(S_UPPER_DEPS)$(C++_DEPS)$(ASM_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(C_UPPER_DEPS)$(SIZEDUMMY) libArduinoMemoryDriver.a
+>>>>>>> 8f6409f802e8e88d4943d923a3143a2cd2032b8f
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(SIZEDUMMY)

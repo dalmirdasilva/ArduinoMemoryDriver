@@ -2,7 +2,11 @@ External24x16Eeprom/External24x16Eeprom.d \
   External24x16Eeprom/External24x16Eeprom.o:  \
  ../External24x16Eeprom/External24x16Eeprom.cpp \
   ../External24x16Eeprom/External24x16Eeprom.h \
+<<<<<<< HEAD
   /home/dalmir/storage/microcontroller/arduino/driver/memory/ExternalEeprom/ExternalEeprom.h \
+=======
+  /storage/microcontroller/arduino/driver/memory/ExternalEeprom/ExternalEeprom.h \
+>>>>>>> 8f6409f802e8e88d4943d923a3143a2cd2032b8f
   /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/binary.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/WCharacter.h \
