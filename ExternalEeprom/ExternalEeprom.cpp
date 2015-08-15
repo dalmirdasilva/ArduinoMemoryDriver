@@ -113,16 +113,9 @@ int ExternalEeprom::setBytes(unsigned int address, unsigned char b, int len) {
 }
 
 unsigned int ExternalEeprom::endOfPage(unsigned int address) {
+    // Why / and then * by the same number?
     unsigned int eopAddr = ((address + pageSize - 1) / pageSize) * pageSize;
     return (eopAddr - address);
-}
-
-void ExternalEeprom::writeBlock(unsigned int address, unsigned char* buf,
-        int len) {
-}
-
-void ExternalEeprom::readBlock(unsigned int address, unsigned char* buf,
-        int len) {
 }
 
 #endif /* __ARDUINO_EXTERNAL_EEPROM_CPP__ */

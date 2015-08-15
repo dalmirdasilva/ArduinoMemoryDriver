@@ -107,7 +107,7 @@ public:
      * @param buf
      * @param len
      */
-    virtual void writeBlock(unsigned int address, unsigned char* buf, int len);
+    virtual void writeBlock(unsigned int address, unsigned char* buf, int len) = 0;
 
     /**
      * Reads a block of bytes from the device.
@@ -116,7 +116,7 @@ public:
      * @param buffer
      * @param len
      */
-    virtual void readBlock(unsigned int address, unsigned char* buf, int len);
+    virtual void readBlock(unsigned int address, unsigned char* buf, int len) = 0;
 
 protected:
 
