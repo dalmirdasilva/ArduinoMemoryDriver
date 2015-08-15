@@ -1,0 +1,8 @@
+digraph "External24cl256Eeprom" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_f88d1ab1c3ed0aa54c2593482472ff0d [shape=box, label="External24cl256Eeprom", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f88d1ab1c3ed0aa54c2593482472ff0d.html"];
+  dir_1ff7961a0798ffb140497523433f67bb [shape=box label="ExternalEeprom" URL="dir_1ff7961a0798ffb140497523433f67bb.html"];
+  dir_f88d1ab1c3ed0aa54c2593482472ff0d->dir_1ff7961a0798ffb140497523433f67bb [headlabel="1", labeldistance=1.5 headhref="dir_000000_000003.html"];
+}

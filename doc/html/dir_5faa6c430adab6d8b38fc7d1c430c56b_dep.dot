@@ -1,0 +1,8 @@
+digraph "ExternalMappedEeprom" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_5faa6c430adab6d8b38fc7d1c430c56b [shape=box, label="ExternalMappedEeprom", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_5faa6c430adab6d8b38fc7d1c430c56b.html"];
+  dir_1ff7961a0798ffb140497523433f67bb [shape=box label="ExternalEeprom" URL="dir_1ff7961a0798ffb140497523433f67bb.html"];
+  dir_5faa6c430adab6d8b38fc7d1c430c56b->dir_1ff7961a0798ffb140497523433f67bb [headlabel="1", labeldistance=1.5 headhref="dir_000005_000003.html"];
+}
