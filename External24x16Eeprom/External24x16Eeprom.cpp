@@ -15,8 +15,8 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-External24x16Eeprom::External24x16Eeprom(unsigned char device) :
-        ExternalEeprom(0x20, 0x7ff, device) {
+External24x16Eeprom::External24x16Eeprom(unsigned char deviceAddress) :
+        ExternalEeprom(0x20, 0x7ff, deviceAddress) {
     Wire.begin();
 }
 
@@ -24,7 +24,7 @@ void External24x16Eeprom::writeBlock(unsigned int address, unsigned char* buf,
         int len) {
     unsigned char block;
     block = (unsigned char) ((address >> 8) & 0x07);
-    Wire.beginTransmission(getDevice() | block);
+    Wire.beginTransmission(getDeviceAddress() | block);
     Wire.write((unsigned char) (address & 0xff));
     for (int i = 0; i < len; i++) {
         Wire.write(buf[i]);
@@ -35,13 +35,13 @@ void External24x16Eeprom::writeBlock(unsigned int address, unsigned char* buf,
 
 void External24x16Eeprom::readBlock(unsigned int address, unsigned char* buf,
         int len) {
-    unsigned char block, deviceAddr;
+    unsigned char block, blockAddress;
     block = (unsigned char) ((address >> 8) & 0x07);
-    deviceAddr = (getDevice() | block);
-    Wire.beginTransmission(deviceAddr);
+    blockAddress = (getDeviceAddress() | block);
+    Wire.beginTransmission(blockAddress);
     Wire.write((unsigned char) (address & 0xff));
     Wire.endTransmission();
-    Wire.requestFrom((int) deviceAddr, len);
+    Wire.requestFrom((int) blockAddress, len);
     for (int i = 0; i < len; i++) {
         while (!Wire.available())
             ;

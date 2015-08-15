@@ -11,7 +11,9 @@
 #ifndef __ARDUINO_EXTERNAL_EEPROM_H__
 #define __ARDUINO_EXTERNAL_EEPROM_H__ 1
 
-class ExternalEeprom {
+#include <WiredDevice.h>
+
+class ExternalEeprom : public WiredDevice {
 
     /**
      * The size of the device.
@@ -22,11 +24,6 @@ class ExternalEeprom {
      * The size of the device page.
      */
     int pageSize;
-
-    /**
-     * Device address number.
-     */
-    unsigned char device;
 public:
 
     /**
@@ -73,15 +70,6 @@ public:
     virtual int setBytes(unsigned int address, unsigned char b, int len);
 
     /**
-     * Gets the device number.
-     * 
-     * @return 
-     */
-    unsigned char getDevice() {
-        return device;
-    }
-
-    /**
      * Gets the page size of the device.
      * 
      * @return 
@@ -125,7 +113,7 @@ protected:
      * 
      * @param device
      */
-    ExternalEeprom(int pageSize, unsigned int deviceSize, unsigned char device);
+    ExternalEeprom(unsigned char deviceAddress, int pageSize, unsigned int deviceSize);
 
     /**
      * Determines the length until first multiple of 'pageSize' of an address

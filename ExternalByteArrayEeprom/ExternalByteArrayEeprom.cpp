@@ -13,20 +13,17 @@
 
 #include "ExternalByteArrayEeprom.h"
 
-ExternalByteArrayEeprom::ExternalByteArrayEeprom(unsigned char* byteArray,
-        unsigned int deviceSize) :
-        ExternalEeprom(16, deviceSize, 0), byteArray(byteArray) {
+ExternalByteArrayEeprom::ExternalByteArrayEeprom(unsigned char* byteArray, unsigned int deviceSize)
+        : ExternalEeprom(0, 16, deviceSize), byteArray(byteArray) {
 }
 
-void ExternalByteArrayEeprom::writeBlock(unsigned int address,
-        unsigned char* buf, int len) {
+void ExternalByteArrayEeprom::writeBlock(unsigned int address, unsigned char* buf, int len) {
     for (int i = 0; i < len; i++) {
         byteArray[address + i] = buf[i];
     }
 }
 
-void ExternalByteArrayEeprom::readBlock(unsigned int address,
-        unsigned char* buf, int len) {
+void ExternalByteArrayEeprom::readBlock(unsigned int address, unsigned char* buf, int len) {
     for (int i = 0; i < len; i++) {
         buf[i] = byteArray[address + i];
     }

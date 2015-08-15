@@ -1,6 +1,0 @@
-digraph "ExternalEeprom" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  dir_1ff7961a0798ffb140497523433f67bb [shape=box, label="ExternalEeprom", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_1ff7961a0798ffb140497523433f67bb.html"];
-}

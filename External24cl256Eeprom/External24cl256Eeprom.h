@@ -19,9 +19,9 @@ public:
     /**
      * Public constructor.
      * 
-     * @param device
+     * @param deviceAddress The i2c addredd of the device.
      */
-    External24cl256Eeprom(unsigned char device);
+    External24cl256Eeprom(unsigned char deviceAddress);
 
 protected:
 

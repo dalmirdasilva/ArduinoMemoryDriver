@@ -18,7 +18,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-ExternalFileEeprom::ExternalFileEeprom(char *fileName, unsigned int deviceSize) : ExternalEeprom(16, deviceSize, 0), fileName(fileName) {
+ExternalFileEeprom::ExternalFileEeprom(char *fileName, unsigned int deviceSize) : ExternalEeprom(0, 16, deviceSize), fileName(fileName) {
     fp = fopen(fileName, "rb+");
     if (fp == NULL) {
         printf("Error when opening file: %s.\n", fileName);

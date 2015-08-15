@@ -1,9 +1,0 @@
-Arduino Memory Driver
-================
-
-Arduino Memory Driver is a driver for Arduino(http://www.arduino.cc/). 
-It is developed in C++. 
-
-You can find the documentation in
-
-	http://www.arduinoio.com/arduino/driver/memory/doc/html 

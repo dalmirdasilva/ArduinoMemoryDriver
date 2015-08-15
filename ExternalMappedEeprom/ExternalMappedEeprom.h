@@ -13,7 +13,7 @@
 
 #include <ExternalEeprom.h>
 
-class ExternalMappedEeprom : public ExternalEeprom {
+class ExternalMappedEeprom: public ExternalEeprom {
 
     /**
      * The underlying external eeprom
@@ -38,8 +38,7 @@ public:
      * @param startAddress
      * @param endAddress
      */
-    ExternalMappedEeprom(ExternalEeprom* externalEeprom,
-            unsigned int startAddress, unsigned int endAddress);
+    ExternalMappedEeprom(ExternalEeprom* externalEeprom, unsigned int startAddress, unsigned int endAddress);
 
     /**
      * Device size.
