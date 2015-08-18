@@ -16,7 +16,7 @@
 #include "ExternalEeprom.h"
 
 ExternalEeprom::ExternalEeprom(unsigned char deviceAddress, int pageSize, unsigned int deviceSize)
-        : WiredDevice(0x50 | (deviceAddress & 0x07)), pageSize(pageSize), deviceSize(deviceSize) {
+        : EepromBasedWiredDevice(0x50 | (deviceAddress & 0x07)), deviceSize(deviceSize), pageSize(pageSize) {
 }
 
 void ExternalEeprom::write(unsigned int address, unsigned char b) {

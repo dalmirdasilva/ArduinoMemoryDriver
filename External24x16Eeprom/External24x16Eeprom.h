@@ -12,6 +12,7 @@
 #define __ARDUINO_EXTERNAL_24X16_EEPROM_H__ 1
 
 #include <ExternalEeprom.h>
+#include <EepromBasedWiredDevice.h>
 
 class External24x16Eeprom : public ExternalEeprom {
 public:
@@ -22,27 +23,6 @@ public:
      * @param device The i2c address of the device.
      */
     External24x16Eeprom(unsigned char deviceAddress);
-
-protected:
-
-    /**
-     * Writes a block of bytes separately by pages to the device.
-     * All bytes during a page write operation must reside on the same page.
-     * 
-     * @param address
-     * @param buf
-     * @param len
-     */
-    virtual void writeBlock(unsigned int address, unsigned char* buf, int len);
-
-    /**
-     * Reads a block of bytes from the device.
-     * 
-     * @param address
-     * @param buf
-     * @param len
-     */
-    virtual void readBlock(unsigned int address, unsigned char* buf, int len);
 };
 
 #endif /* __ARDUINO_EXTERNAL_24X16_EEPROM_H__ */

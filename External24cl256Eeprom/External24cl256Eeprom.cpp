@@ -17,33 +17,7 @@
 
 External24cl256Eeprom::External24cl256Eeprom(unsigned char deviceAddress) :
         ExternalEeprom(deviceAddress, 0x40, 0x7fff) {
-    Wire.begin();
-}
-
-void External24cl256Eeprom::writeBlock(unsigned int address, unsigned char* buf,
-        int len) {
-    Wire.beginTransmission(getDeviceAddress());
-    Wire.write((unsigned char) (address >> 8) & 0xff);
-    Wire.write((unsigned char) (address & 0xff));
-    for (int i = 0; i < len; i++) {
-        Wire.write(buf[i]);
-    }
-    Wire.endTransmission();
-    delay(5);
-}
-
-void External24cl256Eeprom::readBlock(unsigned int address, unsigned char* buf,
-        int len) {
-    Wire.beginTransmission(getDeviceAddress());
-    Wire.write((unsigned char) (address >> 8) & 0xff);
-    Wire.write((unsigned char) (address & 0xff));
-    Wire.endTransmission();
-    Wire.requestFrom((int) getDeviceAddress(), len);
-    for (int i = 0; i < len; i++) {
-        while (!Wire.available())
-            ;
-        buf[i] = Wire.read();
-    }
+    setAddressSize(0x02);
 }
 
 #endif /* __ARDUINO_EXTERNAL_24CL256_EEPROM_CPP__ */
