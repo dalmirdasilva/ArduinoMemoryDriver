@@ -28,5 +28,3 @@ doc:
 	@cd ../..
 	@rm -rf doc
 	@echo "done."
-	
-	
