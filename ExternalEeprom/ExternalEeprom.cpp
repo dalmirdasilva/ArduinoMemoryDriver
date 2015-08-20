@@ -8,15 +8,12 @@
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef __ARDUINO_EXTERNAL_EEPROM_CPP__
-#define __ARDUINO_EXTERNAL_EEPROM_CPP__ 1
-
 #define min(a, b) ((a > b) ? b : a)  
 
 #include "ExternalEeprom.h"
 
 ExternalEeprom::ExternalEeprom(unsigned char deviceAddress, int pageSize, unsigned int deviceSize)
-        : EepromBasedWiredDevice(0x50 | (deviceAddress & 0x07)), deviceSize(deviceSize), pageSize(pageSize) {
+        : EepromBasedWiredDevice(0x50 | (deviceAddress & 0x07)), pageSize(pageSize), deviceSize(deviceSize) {
 }
 
 void ExternalEeprom::write(unsigned int address, unsigned char b) {
@@ -57,7 +54,7 @@ int ExternalEeprom::read(unsigned int address) {
 }
 
 int ExternalEeprom::readBytes(unsigned int address, unsigned char* buf, int len) {
-    int cnt, chunkSize = pageSize;
+    int total, partial, chunkSize;
     unsigned int available;
     if (address >= deviceSize) {
         return -1;
@@ -66,15 +63,19 @@ int ExternalEeprom::readBytes(unsigned int address, unsigned char* buf, int len)
     if (available < (unsigned char) len) {
         len = (int) available;
     }
-    cnt = len;
+    total = 0;
     while (len > 0) {
         chunkSize = min(len, pageSize);
-        readBlock(address, buf, chunkSize);
-        address += chunkSize;
-        buf += chunkSize;
-        len -= chunkSize;
+        partial = readBlock(address, buf, chunkSize);
+        if (partial <= 0) {
+            return total;
+        }
+        total += partial;
+        address += partial;
+        buf += partial;
+        len -= partial;
     }
-    return cnt;
+    return total;
 }
 
 int ExternalEeprom::setBytes(unsigned int address, unsigned char b, int len) {
@@ -108,9 +109,6 @@ int ExternalEeprom::setBytes(unsigned int address, unsigned char b, int len) {
 }
 
 unsigned int ExternalEeprom::endOfPage(unsigned int address) {
-    // Why / and then * by the same number?
-    unsigned int eopAddr = ((address + pageSize - 1) / pageSize) * pageSize;
-    return (eopAddr - address);
+    unsigned int eopAddress = ((address + pageSize - 1) / pageSize) * pageSize;
+    return (eopAddress - address);
 }
-
-#endif /* __ARDUINO_EXTERNAL_EEPROM_CPP__ */

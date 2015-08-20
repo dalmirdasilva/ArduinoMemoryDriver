@@ -8,9 +8,6 @@
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef __ARDUINO_EXTERNAL_MAPPED_EEPROM_CPP__
-#define __ARDUINO_EXTERNAL_MAPPED_EEPROM_CPP__ 1
-
 #include "ExternalMappedEeprom.h"
 
 ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom* externalEeprom, unsigned int startAddress, unsigned int endAddress)
@@ -23,18 +20,18 @@ void ExternalMappedEeprom::writeBlock(unsigned int address, unsigned char* buf, 
     unsigned int mappedAddress = (address + startAddress);
     if (mappedAddress < endAddress) {
         unsigned int available = (endAddress - mappedAddress);
-        len = (len > available) ? available : len;
+        len = ((unsigned int) len > available) ? available : len;
         externalEeprom->writeBlock(mappedAddress, buf, len);
     }
 }
 
-void ExternalMappedEeprom::readBlock(unsigned int address, unsigned char* buf, int len) {
+int ExternalMappedEeprom::readBlock(unsigned int address, unsigned char* buf, int len) {
     unsigned int mappedAddress = (address + startAddress);
+    int total = 0;
     if (mappedAddress < endAddress) {
         unsigned int available = (endAddress - mappedAddress);
-        len = (len > available) ? available : len;
-        externalEeprom->readBlock(mappedAddress, buf, len);
+        len = ((unsigned int) len > available) ? available : len;
+        total = externalEeprom->readBlock(mappedAddress, buf, len);
     }
+    return total;
 }
-
-#endif /* __ARDUINO_EXTERNAL_MAPPED_EEPROM_CPP__ */

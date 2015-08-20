@@ -13,13 +13,14 @@
 
 #include <ExternalEeprom.h>
 
-class External24cl256Eeprom : public ExternalEeprom {
+class External24cl256Eeprom: public ExternalEeprom {
+
 public:
 
     /**
      * Public constructor.
      * 
-     * @param deviceAddress The i2c addredd of the device.
+     * @param deviceAddress The i2c address of the device.
      */
     External24cl256Eeprom(unsigned char deviceAddress);
 };

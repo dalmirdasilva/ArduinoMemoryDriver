@@ -48,7 +48,7 @@ protected:
      * @param buf
      * @param len
      */
-    virtual void readBlock(unsigned int address, unsigned char* buf, int len);
+    virtual int readBlock(unsigned int address, unsigned char* buf, int len);
 };
 
 #endif /* __ARDUINO_EXTERNAL_BYTE_ARRAY_EEPROM_H__ */

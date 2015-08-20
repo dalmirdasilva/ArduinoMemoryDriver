@@ -13,18 +13,25 @@
 
 #include <EepromBasedWiredDevice.h>
 
-class ExternalEeprom : public EepromBasedWiredDevice {
+class ExternalEeprom: public EepromBasedWiredDevice {
+
+    /**
+     * The size of the device page.
+     */
+    int pageSize;
 
     /**
      * The size of the device.
      */
     unsigned int deviceSize;
 
-    /**
-     * The size of the device page.
-     */
-    int pageSize;
 public:
+
+    /**
+     * Virtual destructor.
+     */
+    virtual ~ExternalEeprom() {
+    }
 
     /**
      * Writes a unsigned char at the address into the device.

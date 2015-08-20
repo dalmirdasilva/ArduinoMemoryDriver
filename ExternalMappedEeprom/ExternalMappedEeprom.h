@@ -68,7 +68,7 @@ protected:
      * @param buffer
      * @param len
      */
-    virtual void readBlock(unsigned int address, unsigned char* buf, int len);
+    virtual int readBlock(unsigned int address, unsigned char* buf, int len);
 };
 
 #endif /* __ARDUINO_EXTERNAL_MAPPED_EEPROM_H__ */
