@@ -11,9 +11,7 @@
 #include "ExternalMappedEeprom.h"
 
 ExternalMappedEeprom::ExternalMappedEeprom(ExternalEeprom* externalEeprom, unsigned int startAddress, unsigned int endAddress)
-        : ExternalEeprom(externalEeprom->getDeviceAddress(), externalEeprom->getPageSize(), externalEeprom->getDeviceSize()), externalEeprom(externalEeprom) {
-    this->startAddress = startAddress;
-    this->endAddress = endAddress;
+        : ExternalEeprom(externalEeprom->getDeviceAddress(), externalEeprom->getPageSize(), externalEeprom->getDeviceSize()), externalEeprom(externalEeprom), startAddress(startAddress), endAddress(endAddress) {
 }
 
 void ExternalMappedEeprom::writeBlock(unsigned int address, unsigned char* buf, int len) {

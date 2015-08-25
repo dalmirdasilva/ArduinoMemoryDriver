@@ -11,7 +11,7 @@
 #include "ExternalByteArrayEeprom.h"
 
 ExternalByteArrayEeprom::ExternalByteArrayEeprom(unsigned char* byteArray, unsigned int deviceSize)
-        : ExternalEeprom(0, 16, deviceSize), byteArray(byteArray) {
+        : ExternalEeprom(0x00, 0x10, deviceSize), byteArray(byteArray) {
 }
 
 void ExternalByteArrayEeprom::writeBlock(unsigned int address, unsigned char* buf, int len) {
