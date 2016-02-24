@@ -1,4 +1,4 @@
-ARDUINO_LIB_PATH=/usr/share/arduino/libraries
+ARDUINO_LIB_PATH=~/Arduino/libraries
 LIB_LIST=External24cl256Eeprom External24x16Eeprom ExternalByteArrayEeprom ExternalEeprom ExternalFileEeprom ExternalMappedEeprom
 SOURCE_PATH=`pwd`
 
